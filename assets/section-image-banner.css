@@ -539,3 +539,144 @@
 .banner__text img{
   margin: 0px;
 }
+.button svg {
+  margin-left: 8px;
+  vertical-align: middle;
+}
+.banner__video video {
+  max-width: 508px;
+  width: 100%;
+  max-height: 808px;
+  height: 100%;
+  border-radius: 277px;
+  object-fit: cover;
+  display: block;
+}
+.banner__box-wrapper{
+  max-width: 1719px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 53px;
+}
+.banner__video video{
+  max-width: 508px;
+  width: 100%;
+    height: auto;
+    max-height: 808px;
+    border-radius: 277px;
+    object-fit: cover;  
+    display: block;
+}
+.banner__video{
+  max-width: 508px;
+  width: 100%;
+}
+
+
+
+
+
+
+.product-info::before {
+  content: '★★★★★';
+  font-size: 0.9rem;
+  color: #F6A500;
+  letter-spacing: 2px;
+  margin-bottom: 0.25rem;
+}
+
+.product-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0;
+}
+
+.product-price {
+  font-size: 1rem;
+  color: #000;
+  font-weight: 500;
+  margin-top: 0.25rem;
+}
+
+.product-compare {
+  font-size: 0.9rem;
+  color: #aaa;
+  text-decoration: line-through;
+  margin-left: 0.5rem;
+}
+
+.banner__product-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.banner__product-card {
+  display: flex;
+  align-items: center;
+  border: 2px solid #B46100; 
+  border-radius: 0 125px 125px 125px; 
+  background-color: transparent;
+}
+
+.product-info {
+  width: 175px;
+  height: 135px;
+}
+.product-info img{
+  max-width: 246px;
+  width: 100%;
+}
+.banner__products{
+  max-width: 522px;
+  width: 100%;
+  margin-left: 30px;
+}
+.banner__product-card.banner__product-card--second{
+  margin-top: 47px;
+}
+.product-info .product-title{
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 35px;
+  letter-spacing: 0;
+  color: #4A4A4A;
+}
+.product-info .product-price{
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 29px;
+  letter-spacing: 0;
+  color: #663700;
+}
+.product-info .product-compare{
+  font-weight: 500;
+  font-size:18px;
+  line-height: 29px;
+  letter-spacing: 0;
+  color: #4A4A4A;
+}
+.banner__product-card--first img{
+  max-width: 145px;
+  width: 100%;
+}
+.banner__product-card--first{
+  gap: 71px;
+}
+.banner__product-card--first .product-info{
+  margin: 39px 0px 76px 40px;
+}
+.banner__product-card--second img{
+  max-width: 213px;
+  width: 100%;
+  margin-left: 45px;
+}
+.banner__product-card--second{
+  gap: 29.8px;
+}
+.banner__product-card--second .product-info{
+  margin: 74px 40px 41px 0px;
+}
