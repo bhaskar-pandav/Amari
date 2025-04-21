@@ -494,7 +494,31 @@
 
 /* Custom Css */
 
+/*font-family*/
+@font-face {
+  font-family: 'Albert Sans-Bold';
+  src: url('https://cdn.shopify.com/s/files/1/0595/8798/5489/files/AlbertSans-Bold.ttf?v=1745234861') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: 'DM Sans-Bold';
+  src: url('https://cdn.shopify.com/s/files/1/0595/8798/5489/files/DMSans_18pt-Bold.ttf?v=1745235869') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DM Sans-Medium';
+  src: url('https://cdn.shopify.com/s/files/1/0595/8798/5489/files/DMSans_18pt-Medium.ttf?v=1745236733') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+.main-banner-section{
+  padding: 38px 101px 37px 100px;
+}
 .banner__content .banner__box{
   background:transparent;
 }
@@ -502,13 +526,17 @@
   background-color: #FFF3EE;
 }
 .banner__box h2{
+  font-family: 'Albert Sans-Bold';
   font-size: 55px;
   line-height: 72px;
   letter-spacing: 0;
   color: #663700;
   font-weight: 700;
+  padding: 19px 0px 29px 0px;
+  text-transform: capitalize;
 }
 .banner__box .banner__text p{
+  font-family: 'DM Sans-Bold';
   font-weight: 700;
   font-size: 22px;
   line-height: 35px;
@@ -517,6 +545,7 @@
   margin: 0px;
 }
 .banner__buttons a.button.button--secondary{
+  font-family: 'DM Sans-Bold';
   background-color: #663700;
   color: #FFFFFF;
   font-weight: 700;
@@ -524,14 +553,20 @@
   line-height: 23px;
   letter-spacing: 0;
   border-radius: 10px;
+  padding: 18px 32px 18px 32px;
+}
+.banner__buttons{
+  padding-top: 20px;
 }
 .banner__content .banner__box{
  max-width: 553px;
  width: 100%;
+ padding: 0px;
 }
 .banner__content .banner__box img{
   max-width: 228px;
   width: 100%;
+  position: relative;
 }
 .banner__box{
   text-align: left !important;
@@ -639,6 +674,7 @@
   margin-top: 47px;
 }
 .product-info .product-title{
+  font-family: 'DM Sans-Bold';
   font-weight: 700;
   font-size: 22px;
   line-height: 35px;
@@ -646,8 +682,9 @@
   color: #4A4A4A;
 }
 .product-info .product-price{
+  font-family: 'DM Sans-Medium';
   font-weight: 500;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 29px;
   letter-spacing: 0;
   color: #663700;
@@ -679,4 +716,49 @@
 }
 .banner__product-card--second .product-info{
   margin: 74px 40px 41px 0px;
+}
+.banner__product-card.banner__product-card--second .product-info{
+  max-width: 195px;
+  width: 100%;
+}
+.svg-first{
+  position: absolute;
+  z-index: -199;
+  top: 108.35px;
+  left: 263px;
+
+}
+.svg-second{
+  position: absolute;
+  max-width: 174.33345023582535px;
+  top: 121.35px;
+  left: 624.11px;
+  z-index: 111;
+}
+@keyframes spinner-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.svg-second {
+  animation: spinner-rotate 5s linear infinite;
+  display: inline-block;
+}
+.svg-third{
+  position: absolute;
+  max-width: 79.96947479248077px;
+  top: 755.95px;
+  left:566.97px;
+  z-index: 111;
+}
+.svg-fourth{
+  max-width: 125.39984893798875px;
+  position: absolute;
+  top: 365.97px;
+  left:1170px;
+  z-index: 2;
 }

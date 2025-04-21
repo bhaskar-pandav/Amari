@@ -116,11 +116,30 @@
     </div>
   {%- endif -%} {% endcomment %}
  
-
-
-  <div class="banner__content banner__content--{{ section.settings.desktop_content_position }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="main-banner-section banner__content banner__content--{{ section.settings.desktop_content_position }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
     <div class="banner__box-wrapper">
       
+   
+
+      {% if section.settings.svg-first %}
+        <img src="{{ section.settings.svg-first | image_url }}" alt="SVG First" loading="lazy" class="svg-first">
+      {% endif %}
+       
+
+      
+          {% if section.settings.svg-second %}
+            <img src="{{ section.settings.svg-second | image_url }}" alt="SVG Second" loading="lazy" class="svg-second">
+          {% endif %}
+       
+    {% if section.settings.svg-third %}
+      <img src="{{ section.settings.svg-third | image_url }}" alt="SVG Third" loading="lazy" class="svg-third">
+    {% endif %}
+   
+
+      {% if section.settings.svg-fourth %}
+        <img src="{{ section.settings.svg-fourth | image_url }}" alt="SVG Fourth" loading="lazy" class="svg-fourth">
+      {% endif %}
+   
       <!-- Left Side: Content -->
       <div class="banner__box content-container content-container--full-width-mobile color-{{ section.settings.color_scheme }} gradient">
         {% if section.settings.image %}
@@ -134,7 +153,7 @@
                 {{ block.settings.heading }}
               </h2>
             {%- when 'text' -%}
-              <div class="banner__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }} style="display: flex; align-items: center; gap: 0.5rem;">
+              <div class="banner__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }} style="display: flex; align-items: center; gap:10px">
                 {% if block.settings.icon_image != blank %}
                   <img src="{{ block.settings.icon_image | image_url: width: 32 }}" alt="" style="width: 24px; height: 24px;" />
                 {% endif %}
@@ -167,6 +186,8 @@
         {%- endfor -%}
       </div>
   
+      
+    
       <!-- Right Side: Video -->
       {% if section.settings.video_file_url != blank %}
         <div class="banner__video">
@@ -240,6 +261,7 @@
     
   </div>
  
+          
 {% schema %}
 {
   "name": "t:sections.image-banner.name",
@@ -258,6 +280,26 @@
       "type": "image_picker",
       "id": "image_2",
       "label": "t:sections.image-banner.settings.image_2.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "svg-first",
+      "label": "SVG First Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "svg-second",
+      "label": "SVG Second Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "svg-third",
+      "label": "SVG Third Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "svg-fourth",
+      "label": "SVG Fourth Image"
     },
     {
   "type": "url",
