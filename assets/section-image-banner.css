@@ -134,7 +134,7 @@
 
   .banner__content.banner__content--bottom-center {
     align-items: flex-end;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .banner__content.banner__content--bottom-right {
@@ -489,4 +489,46 @@
   .banner--desktop-transparent .rte a:hover {
     color: currentColor;
   }
+}
+
+
+/* Custom Css */
+
+
+.banner__content .banner__box{
+  background:transparent;
+}
+.banner__content{
+  background-color: #FFF3EE;
+}
+.banner__box h2{
+  font-size: 55px;
+  line-height: 72px;
+  letter-spacing: 0;
+  color: #663700;
+  font-weight: 700;
+}
+.banner__box .banner__text p{
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 35px;
+  letter-spacing: 0;
+  color: #4A4A4A;
+}
+.banner__buttons a.button.button--secondary{
+  background-color: #663700;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
+  letter-spacing: 0;
+  border-radius: 10px;
+}
+.banner__content .banner__box{
+ max-width: 553px;
+ width: 100%;
+}
+.banner__content .banner__box img{
+  max-width: 228px;
+  width: 100%;
 }
