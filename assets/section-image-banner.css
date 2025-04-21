@@ -7,7 +7,7 @@
 }
 
 .banner__box {
-  text-align: center;
+  text-align: left;
 }
 
 /* Needed for gradient continuity with or without animation, the transform scopes the gradient to its container which happens already when animation are turned on */
@@ -343,7 +343,7 @@
   position: relative;
   height: fit-content;
   align-items: center;
-  text-align: center;
+  text-align: left;
   width: 100%;
   word-wrap: break-word;
   z-index: 1;
@@ -514,6 +514,7 @@
   line-height: 35px;
   letter-spacing: 0;
   color: #4A4A4A;
+  margin: 0px;
 }
 .banner__buttons a.button.button--secondary{
   background-color: #663700;
@@ -531,4 +532,10 @@
 .banner__content .banner__box img{
   max-width: 228px;
   width: 100%;
+}
+.banner__box{
+  text-align: left !important;
+}
+.banner__text img{
+  margin: 0px;
 }
