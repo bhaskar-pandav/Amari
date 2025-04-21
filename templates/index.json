@@ -65,6 +65,9 @@
       "settings": {
         "image": "shopify://shop_images/Banner-left.png",
         "image_2": "shopify://shop_images/Banner-left.png",
+        "video_file_url": "https://cdn.shopify.com/videos/c/o/v/94a734dceac64098a7ee685edf0f65ad.mp4",
+        "first_product": "radiance-revive-combo-serums",
+        "second_product": "sparkle-sensation-body-lotion-set",
         "image_overlay_opacity": 40,
         "image_height": "large",
         "image_behavior": "none",
