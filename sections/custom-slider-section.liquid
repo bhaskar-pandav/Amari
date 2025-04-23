@@ -1,0 +1,38 @@
+{{ 'custom-slider.css' | asset_url | stylesheet_tag }}
+    <div class="star-text-slider">
+      <div class="slider-track">
+        {% assign words = section.settings.text_items | newline_to_br | split: "<br />" %}
+        {% for i in (1..2) %} 
+          {% for word in words %}
+            <div class="slider-item">
+              <span class="word">{{ word }}</span>
+              
+                <span class="star-icon">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.2976 20C9.17149 13.0465 7.55361 11.4287 0.60015 10.3025C7.55361 9.17641 9.17149 7.55852 10.2976 0.605065C11.4237 7.55852 13.0416 9.17641 20 10.3025C13.0416 11.4287 11.4237 13.0465 10.2976 20Z" fill="#B46100"/>
+                  </svg>
+                </span>
+            </div>
+          {% endfor %}
+        {% endfor %}
+      </div>
+    </div>
+    
+    {% schema %}
+        {
+          "name": "Star Text Slider",
+          "settings": [
+            {
+              "type": "textarea",
+              "id": "text_items",
+              "label": "Enter words (one per line)",
+              "default": "Nourishing\nLuminous\nVibrant\nSmooth\nDewy\nSoft\nYouthful\nLuminescent\nGlow\nRadiance"
+            }
+          ],
+          "presets": [
+            {
+              "name": "Star Text Slider"
+            }
+          ]
+        }
+        {% endschema %}

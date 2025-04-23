@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'Albert Sans-Bold';
+    src: url('https://cdn.shopify.com/s/files/1/0595/8798/5489/files/AlbertSans-Bold_5c433f74-04c4-4445-a565-a57ded15ed46.ttf?v=1745319303') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+.star-text-slider {
+overflow: hidden;
+width: 100%;
+padding: 100px 0px 0px 0px;
+}
+
+.slider-track {
+display: flex;
+width: max-content;
+animation: scroll-left 30s linear infinite;
+}
+
+.slider-item {
+display: flex;
+align-items: center;
+white-space: nowrap;
+padding: 0 10px;
+flex: 0 0 auto;
+}
+
+.star-icon {
+margin-left: 10px;
+display: flex;
+align-items: center;
+}
+
+.slider-item .word{
+font-family: 'Albert Sans-Bold';
+font-weight: 700;
+font-size: 35px;
+line-height: 46px;
+letter-spacing: 0;
+color: #4A4A4A;
+}
+
+@keyframes scroll-left {
+0% {
+transform: translateX(0);
+}
+100% {
+transform: translateX(-50%);
+}
+}
+
+.slider-item {
+min-width: calc(100% / 16);
+justify-content: space-around;
+
+}

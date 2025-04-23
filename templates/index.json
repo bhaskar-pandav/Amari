@@ -84,8 +84,53 @@
         "show_text_below": false
       }
     },
+    "custom_slider_section_GG88Qq": {
+      "type": "custom-slider-section",
+      "settings": {
+        "text_items": "Nourishing\nLuminous\nVibrant\nSmooth\nDewy\nSoft\nYouthful\nLuminescent\nGlow\nRadiance"
+      }
+    },
+    "custom_collection_j3yg3j": {
+      "type": "custom-collection",
+      "blocks": {
+        "collection_tXzHA6": {
+          "type": "collection",
+          "settings": {
+            "collection": "cleansing-essentials"
+          }
+        },
+        "collection_3aLR8H": {
+          "type": "collection",
+          "settings": {
+            "collection": "skin-hydration"
+          }
+        },
+        "collection_zeyxyK": {
+          "type": "collection",
+          "settings": {
+            "collection": "anti-ageing"
+          }
+        },
+        "collection_3QfabW": {
+          "type": "collection",
+          "settings": {
+            "collection": "skin-exfoliator"
+          }
+        }
+      },
+      "block_order": [
+        "collection_tXzHA6",
+        "collection_3aLR8H",
+        "collection_zeyxyK",
+        "collection_3QfabW"
+      ],
+      "settings": {
+        "title": "Our Collections"
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "collection": "all",
         "products_to_show": 8,
@@ -115,6 +160,8 @@
   },
   "order": [
     "image_banner",
+    "custom_slider_section_GG88Qq",
+    "custom_collection_j3yg3j",
     "featured_collection"
   ]
 }

@@ -1,0 +1,170 @@
+{% schema %}
+    {
+      "name": "Our Collections",
+      "tag": "section",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Section Title",
+          "default": "Our Collections"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "collection",
+          "name": "Collection",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection",
+              "label": "Select Collection"
+            }
+          ]
+        }
+      ],
+      "max_blocks": 12,
+      "presets": [
+        {
+          "name": "Our Collections",
+          "blocks": []
+        }
+      ]
+    }
+    {% endschema %}
+    
+    <div class="our-collections-section">
+      {% if section.settings.title != blank %}
+        <h2 class="section-title">{{ section.settings.title }}</h2>
+      {% endif %}
+    
+      <div class="collections-wrapper">
+        {% for block in section.blocks %}
+          {% assign collection = block.settings.collection %}
+          {% if collection %}
+            <a href="{{ collection.url }}" target="_blank" class="collection-item">
+              <div class="image-wrapper">
+                {% if collection.image %}
+                  <img src="{{ collection.image | img_url: '480x480' }}" alt="{{ collection.title }}" />
+                  <div class="overlay">
+                    <div class="overlay-content">
+                      <h3>{{ collection.title }}</h3>
+                      <p>({{ collection.products_count }} items)</p>
+                    </div>
+                  </div>
+                {% endif %}
+              </div>
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const collectionItems = document.querySelectorAll('.collection-item');
+    
+        collectionItems.forEach(item => {
+          const imageWrapper = item.querySelector('.image-wrapper');
+          const img = imageWrapper.querySelector('img');
+          const overlay = imageWrapper.querySelector('.overlay');
+    
+          if (img && overlay) {
+            img.onload = function() {
+              overlay.style.width = img.offsetWidth + 'px';
+              overlay.style.height = img.offsetHeight + 'px';
+            };
+    
+            // Handle cases where the image might already be loaded
+            if (img.complete) {
+              overlay.style.width = img.offsetWidth + 'px';
+              overlay.style.height = img.offsetHeight + 'px';
+            }
+          }
+        });
+      });
+    </script>
+    
+    <style>
+      .our-collections-section {
+        text-align: center;
+        padding: 40px 20px;
+      }
+    
+      .section-title {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #5c3300;
+        margin-bottom: 30px;
+      }
+    
+      .collections-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px; /* Adjust gap as needed */
+      }
+    
+      .collection-item {
+        width: auto; /* Adjust as needed based on your desired layout */
+        height: auto; /* Adjust as needed based on your desired layout */
+        position: relative;
+        display: block;
+        overflow: hidden; /* To contain the image and overlay */
+      }
+    
+      .image-wrapper {
+        position: relative; /* For absolute positioning of the overlay */
+        display: block; /* Ensure it takes the image dimensions */
+      }
+    
+      .image-wrapper img {
+        display: block; /* Remove any default inline spacing */
+        width: 100%; /* Make image responsive within its wrapper */
+        height: auto;
+        object-fit: contain; /* Ensures the entire image is visible */
+      }
+    
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #B46100; /* The desired color */
+        opacity: 0; /* Initially hidden */
+        transition: opacity 0.3s ease-in-out; /* Smooth transition for opacity */
+        z-index: 1; /* Ensure it's below the text content */
+      }
+    
+      .collection-item:hover .overlay {
+        opacity: 0.8; /* Fade in the overlay on hover */
+      }
+    
+      .overlay-content {
+        position: absolute; /* Position text over the overlay */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-align: center;
+        font-size: 14px;
+        z-index: 2; /* Ensure text is on top of the overlay */
+        opacity: 0; /* Initially hide text */
+        transition: opacity 0.3s ease-in-out; /* Smooth text fade */
+      }
+    
+      .collection-item:hover .overlay-content {
+        opacity: 1; /* Fade in text on hover */
+      }
+    
+      .overlay-content h3 {
+        margin: 0 0 5px 0;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+    
+      .overlay-content p {
+        margin: 0;
+        font-size: 0.85rem;
+      }
+    </style>
