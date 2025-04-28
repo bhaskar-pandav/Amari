@@ -53,3 +53,9 @@ min-width: calc(100% / 16);
 justify-content: space-around;
 
 }
+/*responsive*/
+@media screen and (max-width:425px){
+    .star-text-slider{
+        padding: 50px 0 0;
+    }
+}
