@@ -1,0 +1,167 @@
+@font-face {
+    font-family: 'Albert Sans-Bold';
+    src: url('https://cdn.shopify.com/s/files/1/0595/8798/5489/files/AlbertSans-Bold.ttf?v=1745234861') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DM Sans-Medium';
+    src: url('https://cdn.shopify.com/s/files/1/0595/8798/5489/files/DMSans_18pt-Medium.ttf?v=1745236733') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+    /* exclusive-products.css */
+.exclusive-products {
+  background: #ffffff;
+}
+
+.exclusive-products__container {
+  max-width: 1820px;
+  margin: 0 auto 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.exclusive-products__left {
+  flex: 1 1 45%;
+  text-align: center;
+  max-width: 756px;
+  width: 100%;
+  position: relative;
+}
+
+.exclusive-products__main-image {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.exclusive-products__right {
+  flex: 1 1 50%;
+  max-width: 54.451%;
+  width: 100%;
+}
+
+.exclusive-products__heading {
+  font-family: 'Albert Sans-Bold';
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 57px;
+  letter-spacing: 0;
+  color: #663700;
+  margin-bottom: 30px;
+  margin-top: 0px;
+}
+
+.exclusive-products__paragraph {
+  font-family: 'DM Sans-Medium';
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0;
+  color: #4A4A4A;
+  margin-bottom: 40px;
+}
+
+.exclusive-products__icons {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 29px;
+}
+
+.exclusive-products__icon-item {
+  flex: 1 1 30%;
+  text-align: center;
+  max-width: 17.66%;
+  width: 100%;
+}
+
+.exclusive-products__icon-image {
+  max-width: 175px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 5px;
+}
+
+.exclusive-products__icon-text {
+  font-family:'DM Sans-Medium' ;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 29px;
+  letter-spacing: 0;
+  color: #4A4A4A;
+  text-align: center;
+  margin-top: 0px;
+}
+
+/*svg*/
+.svg-img {
+    max-width: 180px;
+    width: 100%;
+    max-height: 180px;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    right: -30px;
+    top: 10%;
+    /* Optional: Center the content if needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.svg-img img {
+    width: 100%;
+    height: 100%;
+    animation: spin 5s linear infinite;
+    transform-origin: center center; /* Ensures the spin is around the center */
+}
+
+/* Keyframes for smooth infinite rotation */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive */
+
+@media screen and (max-width:1440px){
+    .exclusive-products__container{
+        gap: 40px;
+        padding: 0px 50px 100px 0px;
+    }
+}
+@media screen and (max-width:1240px){
+    .exclusive-products__icon-image{
+        max-width: 93px;
+        width: 100%;
+    }
+}
+@media screen and (max-width:1199px){
+    .exclusive-products__icon-text{
+        font-size: 16px;
+    }
+    .exclusive-products__paragraph{
+        margin-bottom: 20px;
+    }
+    .exclusive-products__heading{
+        margin-bottom: 20px;
+    }
+    .svg-img{
+        top: 0;
+    }
+    .svg-img img{
+        max-width: 80%;
+        width: 100%;
+    }
+}

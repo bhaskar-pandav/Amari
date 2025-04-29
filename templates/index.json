@@ -129,33 +129,58 @@
         "title": "Our Collections"
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
-      "disabled": true,
+    "custom_img_with_txt_eA6np9": {
+      "type": "custom-img-with-txt",
+      "blocks": {
+        "icon_HVkCgj": {
+          "type": "icon",
+          "settings": {
+            "icon_image": "shopify://shop_images/Icon.svg",
+            "icon_text": "Perfect for Oily & Acne Prone Skin"
+          }
+        },
+        "icon_PP8dk8": {
+          "type": "icon",
+          "settings": {
+            "icon_image": "shopify://shop_images/Icon_1.svg",
+            "icon_text": "Works Efficiently for Skin Nourishment"
+          }
+        },
+        "icon_F7kpxQ": {
+          "type": "icon",
+          "settings": {
+            "icon_image": "shopify://shop_images/Icon_2.svg",
+            "icon_text": "Effective in Fighting Infections"
+          }
+        },
+        "icon_t9kUWH": {
+          "type": "icon",
+          "settings": {
+            "icon_image": "shopify://shop_images/Icon_3.svg",
+            "icon_text": "Natural Antiseptic Properties"
+          }
+        },
+        "icon_3g9mgL": {
+          "type": "icon",
+          "settings": {
+            "icon_image": "shopify://shop_images/Icon_4.svg",
+            "icon_text": "Remarkable Cleansing Power"
+          }
+        }
+      },
+      "block_order": [
+        "icon_HVkCgj",
+        "icon_PP8dk8",
+        "icon_F7kpxQ",
+        "icon_t9kUWH",
+        "icon_3g9mgL"
+      ],
+      "name": "Exclusive Products Section",
       "settings": {
-        "collection": "all",
-        "products_to_show": 8,
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 4,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 44,
-        "padding_bottom": 36
+        "main_image": "shopify://shop_images/Exclusive-products.png",
+        "svg_image": "shopify://shop_images/Test_Badge.svg",
+        "heading": "The Power Of Our Exclusive Products",
+        "paragraph": "Experience the transcendence of beauty with the Power of Our Exclusive Products. Elevate your skincare routine with unique formulations crafted to deliver unparalleled results. Unleash radiant and healthy skin like never before, as we redefine the essence of skincare excellence."
       }
     }
   },
@@ -163,6 +188,6 @@
     "image_banner",
     "custom_slider_section_GG88Qq",
     "custom_collection_j3yg3j",
-    "featured_collection"
+    "custom_img_with_txt_eA6np9"
   ]
 }
