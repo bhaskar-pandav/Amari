@@ -214,20 +214,17 @@
         const slider = document.getElementById('Slider-{{ section.id }}');
         const prevButton = document.querySelector('.slider-button--prev');
         const nextButton = document.querySelector('.slider-button--next');
-    
         const card = slider.querySelector('li');
         const cardStyle = getComputedStyle(card);
         const cardWidth = card.offsetWidth + parseInt(cardStyle.marginRight);
     
         function updateButtonState() {
-          // At the start
           if (slider.scrollLeft <= 0) {
             prevButton.classList.add('disabled');
           } else {
             prevButton.classList.remove('disabled');
           }
-    
-          // At the end
+
           const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
           if (slider.scrollLeft >= maxScrollLeft - 1) {
             nextButton.classList.add('disabled');
@@ -243,10 +240,8 @@
         nextButton.addEventListener('click', function () {
           slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
         });
-    
+        
         slider.addEventListener('scroll', updateButtonState);
-    
-        // Initial check after full layout
         requestAnimationFrame(updateButtonState);
       });
     </script>
