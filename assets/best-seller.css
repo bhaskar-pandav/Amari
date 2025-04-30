@@ -1,0 +1,39 @@
+
+@font-face {
+    font-family: 'Albert Sans-Bold';
+    src: url('https://cdn.shopify.com/s/files/1/0595/8798/5489/files/AlbertSans-Bold.ttf?v=1745234861') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+.grid__item{
+    max-width: calc(25% - 22.5px) !important;
+    width: calc(25% - 22.5px) !important;
+    height: auto;
+}
+.grid{
+    column-gap: 30.15px;
+    flex-wrap: nowrap;
+}
+.featured_collection .card__inner.color-scheme-2.gradient.ratio{
+    max-height: 429px;
+    height: 100%;
+}
+.card-wrapper .card__inner{
+    border-radius: 10px;
+}
+.featured_collection .collection .title {
+    text-align: center;
+    font-family: 'Albert Sans-Bold';
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 57px;
+    letter-spacing: 0;
+    color: #663700;
+}
+
+.featured_collection .page-width{
+    max-width: 1780px;
+    margin: 0 auto;
+    padding: 0 30px;
+}

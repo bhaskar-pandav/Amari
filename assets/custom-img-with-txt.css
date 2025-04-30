@@ -37,7 +37,6 @@
   max-width: 100%;
   width: 100%;
   height: auto;
-  border-radius: 10px;
 }
 
 .exclusive-products__right {
@@ -164,4 +163,116 @@
         max-width: 80%;
         width: 100%;
     }
+}
+@media screen and (max-width:1024px){
+  .exclusive-products__icon-image{
+    max-width: 61.94px;
+    width: 100%;
+  }
+  .exclusive-products__icons{
+    gap: 15px;
+  }
+  .exclusive-products__container{
+    padding: 0 30px 100px 0;
+  }
+}
+@media screen and (max-width:768px){
+  .exclusive-products__container{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .exclusive-products__right{
+    max-width: 100%;
+    width: 100%;
+    padding-left: 30px;
+    text-align: center;
+  }
+  .exclusive-products__heading{
+    font-size: 40px;
+  }
+  .exclusive-products__paragraph,.exclusive-products__heading{
+    margin-bottom: 30px;
+  }
+  .exclusive-products__container{
+    gap: 30px;
+  }
+}
+@media screen and (max-width:425px){
+  .exclusive-products__right{
+    padding: 50px 0px 50px 30px;
+  }
+  .exclusive-products__icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 0px 24px 0px 23px;
+  }
+  
+  .exclusive-products__icon-item {
+    flex: 0 0 calc(57% - 30px); /* 2 items per row */
+    max-width: calc(57% - 30px);
+    text-align: center;
+  }
+  .exclusive-products__icon-text{
+    margin: 0px;
+  }
+  .exclusive-products__icon-image{
+    max-width: 100px;
+    width: 100%;
+  }
+  .exclusive-products__container{
+    gap: 0px;
+  }
+  .svg-img img{
+    max-width: 55.56%;
+    width: 100%;
+    height: auto;
+  }
+  .svg-img{
+    top: -12%;
+    right: -10%;
+  }
+  .exclusive-products__heading{
+    font-size: 30px;
+    line-height: 39px;
+    letter-spacing: 0;
+  }
+  .exclusive-products__paragraph{
+    margin-top: 0px;
+    margin-bottom: 31px;
+  }
+  .exclusive-products__icon-text{
+    line-height: 26px;
+  }
+}
+@media screen and (max-width:375px){
+  .exclusive-products__icon-item{
+    flex: 0 0 calc(58.4% - 30px);
+    max-width: calc(58.5% - 30px);
+  }
+  .svg-img{
+    top: -15%;
+    right: -12%;
+  }
+}
+@media screen and (max-width:320px){
+  .exclusive-products__icon-item{
+    flex: 0 0 calc(60.5% - 30px);
+    max-width: calc(61.5% - 30px);
+  }
+  .exclusive-products__heading{
+    font-size: 25px;
+    line-height: 36px;
+    margin-bottom: 20px;
+  }
+  .exclusive-products__container{
+    padding: 0 30px 50px 0;
+  }
+  .svg-img{
+    top: -22%;
+    right: -18%;
+  }
+  .svg-img img{
+    max-width: 45.56%;
+  }
 }
