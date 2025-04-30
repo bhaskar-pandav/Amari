@@ -5,13 +5,19 @@
     font-weight: 700;
     font-style: normal;
 }
-
+@font-face {
+    font-family: 'DM Sans-Bold';
+    src: url('https://cdn.shopify.com/s/files/1/0595/8798/5489/files/DMSans_18pt-Bold.ttf?v=1745235869') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
 .grid__item{
     max-width: calc(25% - 22.5px) !important;
     width: calc(25% - 22.5px) !important;
     height: auto;
 }
 .grid{
+    position: relative;
     column-gap: 30.15px;
     flex-wrap: nowrap;
 }
@@ -37,3 +43,70 @@
     margin: 0 auto;
     padding: 0 30px;
 }
+
+
+
+
+.slider-buttons {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+  }
+  
+  .slider-button {
+    background-color: #663700 !important;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    width: 60px !important;
+    height: 40px !important;
+    padding: 10px 12px;
+    cursor: pointer;
+    font-size: 20px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, transform 0.3s;
+    color: #FFFFFF !important;
+  }
+  .svg-wrapper{
+    color: #FFFFFF;
+    width: 11.11111068725586px;
+    height: 20px;
+  }
+  .slider-counter{
+    display: none !important;
+  }
+  .slider-buttons{
+    position: absolute;
+    justify-content: space-between !important;
+    width: 100%;
+    margin-top: 0px !important;
+    top: 40%;
+  }
+ 
+  .slider-button:hover {
+    background-color: #f5f5f5;
+    transform: scale(1.1);
+  }
+  .nxt-btn{
+    margin-right: 60px;
+  }
+
+  .slider-button.disabled {
+    background-color: white;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  
+  .card__heading{
+    font-family: 'DM Sans-Bold';
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 35px;
+    letter-spacing: 0;
+    color: #4A4A4A;
+  }
+  .card-information{
+    color: #663700;
+  }

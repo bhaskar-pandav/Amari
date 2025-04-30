@@ -5,6 +5,8 @@
 
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
+{{ 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css' | stylesheet_tag }}
+
 
 {% if section.settings.image_shape == 'blob' %}
   {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
@@ -24,6 +26,7 @@
   <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'price-per-item.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'quick-order-list.js' | asset_url }}" defer="defer"></script>
+
 {%- endif -%}
 
 {%- style -%}
@@ -89,7 +92,7 @@
     </div>
 
     <slider-component class="slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-      <ul
+    <ul
         id="Slider-{{ section.id }}"
         data-id="{{ section.id }}"
         class="grid product-grid contains-card contains-card--product{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--{{ section.settings.columns_desktop }}-col-desktop{% if section.settings.collection == blank %} grid--2-col-tablet-down{% else %} grid--{{ section.settings.columns_mobile }}-col-tablet-down{% endif %}{% if show_mobile_slider or show_desktop_slider %} slider{% if show_desktop_slider %} slider--desktop{% endif %}{% if show_mobile_slider %} slider--tablet grid--peek{% endif %}{% endif %}"
@@ -152,40 +155,107 @@
             </li>
           {%- endfor -%}
         {%- endif -%}
+        
+      
       </ul>
-      {%- if show_mobile_slider or show_desktop_slider -%}
-        <div class="slider-buttons">
-          <button
-            type="button"
-            class="slider-button slider-button--prev"
-            name="previous"
-            aria-label="{{ 'general.slider.previous_slide' | t }}"
-            aria-controls="Slider-{{ section.id }}"
-          >
-            <span class="svg-wrapper">
-              {{- 'icon-caret.svg' | inline_asset_content -}}
-            </span>
-          </button>
-          <div class="slider-counter caption">
-            <span class="slider-counter--current">1</span>
-            <span aria-hidden="true"> / </span>
-            <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
-            <span class="slider-counter--total">{{ products_to_display }}</span>
-          </div>
-          <button
-            type="button"
-            class="slider-button slider-button--next"
-            name="next"
-            aria-label="{{ 'general.slider.next_slide' | t }}"
-            aria-controls="Slider-{{ section.id }}"
-          >
-            <span class="svg-wrapper">
-              {{- 'icon-caret.svg' | inline_asset_content -}}
-            </span>
-          </button>
+      <div class="slider-buttons">
+        <div class="prev-btn">
+        <button
+          type="button"
+          class="slider-button slider-button--prev"
+          name="previous"
+          aria-label="Previous"
+          aria-controls="Slider-{{ section.id }}"
+        >
+          <span class="svg-wrapper">‹</span>
+        </button>
         </div>
-      {%- endif -%}
+        
+        <div class="nxt-btn">
+        <button
+          type="button"
+          class="slider-button slider-button--next"
+          name="next"
+          aria-label="Next"
+          aria-controls="Slider-{{ section.id }}"
+        >
+          <span class="svg-wrapper">›</span>
+        </button>
+        </div>
+      </div>
+      <style>
+        #Slider-{{ section.id }} {
+          display: flex;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          scroll-behavior: smooth;
+          
+          scrollbar-width: none; /* Firefox */
+          -ms-overflow-style: none; /* IE 10+ */
+        }
+      
+        #Slider-{{ section.id }}::-webkit-scrollbar {
+          display: none; /* WebKit */
+        }
+      
+        #Slider-{{ section.id }} li {
+          flex: 0 0 auto;
+          scroll-snap-align: start;
+        }
+      </style>
+      
+      
+      
+      
     </slider-component>
+
+    <script>
+      window.addEventListener('load', function () {
+        const slider = document.getElementById('Slider-{{ section.id }}');
+        const prevButton = document.querySelector('.slider-button--prev');
+        const nextButton = document.querySelector('.slider-button--next');
+    
+        const card = slider.querySelector('li');
+        const cardStyle = getComputedStyle(card);
+        const cardWidth = card.offsetWidth + parseInt(cardStyle.marginRight);
+    
+        function updateButtonState() {
+          // At the start
+          if (slider.scrollLeft <= 0) {
+            prevButton.classList.add('disabled');
+          } else {
+            prevButton.classList.remove('disabled');
+          }
+    
+          // At the end
+          const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+          if (slider.scrollLeft >= maxScrollLeft - 1) {
+            nextButton.classList.add('disabled');
+          } else {
+            nextButton.classList.remove('disabled');
+          }
+        }
+    
+        prevButton.addEventListener('click', function () {
+          slider.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+        });
+    
+        nextButton.addEventListener('click', function () {
+          slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
+        });
+    
+        slider.addEventListener('scroll', updateButtonState);
+    
+        // Initial check after full layout
+        requestAnimationFrame(updateButtonState);
+      });
+    </script>
+    
+    
+    
+    
+
+
 
     {%- if section.settings.show_view_all and more_in_collection -%}
       <div class="center collection__view-all{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
@@ -203,6 +273,7 @@
     {%- endif -%}
   </div>
 </div>
+
 
 {% schema %}
 {
@@ -516,3 +587,52 @@
   ]
 }
 {% endschema %}
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous" defer></script>
+  <script
+  src="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.9.0/slick/slick.min.js"
+  type="text/javascript"
+  defer
+  crossorigin="anonymous">
+</script>
+
+<script>
+$('.grid').slick({
+  dots: true,
+  button:true,
+  infinite: false,
+  speed: 300,
+  slidesToShow: 4,
+  slidesToScroll: 4,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+});
+</script>
