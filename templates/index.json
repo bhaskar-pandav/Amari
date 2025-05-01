@@ -211,6 +211,60 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "slick_slider_yNmddF": {
+      "type": "slick-slider",
+      "blocks": {
+        "card_9W4PJV": {
+          "type": "card",
+          "settings": {}
+        },
+        "card_mkDYYN": {
+          "type": "card",
+          "settings": {}
+        },
+        "card_nTMBrP": {
+          "type": "card",
+          "settings": {}
+        },
+        "card_T7EPf8": {
+          "type": "card",
+          "settings": {}
+        },
+        "card_LbQj3C": {
+          "type": "card",
+          "settings": {}
+        },
+        "card_xMFeRF": {
+          "type": "card",
+          "settings": {}
+        },
+        "card_Y4phLq": {
+          "type": "card",
+          "settings": {}
+        },
+        "card_ifKKNx": {
+          "type": "card",
+          "settings": {}
+        },
+        "card_MKN8Ad": {
+          "type": "card",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "card_9W4PJV",
+        "card_mkDYYN",
+        "card_nTMBrP",
+        "card_T7EPf8",
+        "card_LbQj3C",
+        "card_xMFeRF",
+        "card_Y4phLq",
+        "card_ifKKNx",
+        "card_MKN8Ad"
+      ],
+      "name": "slick slider practice ",
+      "settings": {}
     }
   },
   "order": [
@@ -218,6 +272,7 @@
     "custom_slider_section_GG88Qq",
     "custom_collection_j3yg3j",
     "custom_img_with_txt_eA6np9",
-    "featured_collection_QjTFWw"
+    "featured_collection_QjTFWw",
+    "slick_slider_yNmddF"
   ]
 }

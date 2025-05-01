@@ -11,11 +11,13 @@
     font-weight: 700;
     font-style: normal;
 }
-.grid__item{
-    max-width: calc(25% - 22.5px) !important;
-    width: calc(25% - 22.5px) !important;
-    height: auto;
+@font-face {
+  font-family: 'DM Sans-Medium';
+  src: url('https://cdn.shopify.com/s/files/1/0595/8798/5489/files/DMSans_18pt-Medium.ttf?v=1745236733') format('truetype');
+  font-weight: 500;
+  font-style: normal;
 }
+
 .grid{
     position: relative;
     column-gap: 30.15px;
@@ -37,68 +39,15 @@
     letter-spacing: 0;
     color: #663700;
 }
-
+body{
+  padding: 0px !important;
+}
 .featured_collection .page-width{
     max-width: 1780px;
     margin: 0 auto;
     padding: 0 30px;
 }
 
-
-
-
-.slider-buttons {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    gap: 20px;
-  }
-  
-  .slider-button {
-    background-color: #663700 !important;
-    border: 1px solid #ccc;
-    border-radius: 25px;
-    width: 60px !important;
-    height: 40px !important;
-    padding: 10px 12px;
-    cursor: pointer;
-    font-size: 20px;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-    transition: background 0.3s, transform 0.3s;
-    color: #FFFFFF !important;
-  }
-  .svg-wrapper{
-    color: #FFFFFF;
-    width: 11.11111068725586px;
-    height: 20px;
-  }
-  .slider-counter{
-    display: none !important;
-  }
-  .slider-buttons{
-    position: absolute;
-    justify-content: space-between !important;
-    width: 100%;
-    margin-top: 0px !important;
-    top: 40%;
-  }
- 
-  .slider-button:hover {
-    background-color: #f5f5f5;
-    transform: scale(1.1);
-  }
-  .nxt-btn{
-    margin-right: 60px;
-  }
-
-  .slider-button.disabled {
-    background-color: white;
-    opacity: 0.5;
-    pointer-events: none;
-  }
-  
   .card__heading{
     font-family: 'DM Sans-Bold';
     font-weight: 700;
@@ -110,3 +59,125 @@
   .card-information{
     color: #663700;
   }
+  .custom-card-list .slick-prev{
+    width: 20px;
+    height: 20px;
+    background-color: black;
+  }
+  .custom-card-list .slick-next{
+    width: 20px;
+    height: 20px;
+    background-color: black;
+  }
+
+  .grid__item{
+    max-width: 407.21px !important;
+    width: 100%;
+  }
+  
+  .product-grid .slick-dots{
+    display: none !important;
+  }
+
+  .product-grid .slick-prev {
+    position: absolute;
+    width: 60px;
+    height: 40px;
+    border-radius: 25px;
+    background: #663700;
+    left: -1% !important;
+    z-index: 2;
+    top: 40% !important;
+  }
+  .product-grid .slick-next{
+    position: absolute;
+    width: 60px !important;
+    height: 40px !important;
+    border-radius: 25px !important;
+    background: #663700 !important;
+    top: 40% !important;
+    right: -0.7% !important;
+  }
+  .slick-prev,
+  .slick-next {
+    font-size: 0; /* Hide visible text */
+  }
+  .product-grid .slick-next , .product-grid .slick-prev{
+    border: none;
+  }
+  .pr-info .product-grid{
+    margin: 0 -15px;
+}
+.pr-info .product-grid .grid__item{
+    margin: 0 15px;
+} 
+
+.slick-next:before {
+    content: '›' !important; 
+}
+
+  .slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus{
+    color: #663700 !important;
+    outline: none;
+    background: #663700 !important;
+  }
+  .slick-prev:before, .slick-next:before{
+    color: #FFFFFF !important;
+  }
+
+  .card-information .price-item{
+    font-family: 'DM Sans-Medium';
+    font-size: 18px;
+    line-height: 29px;
+    letter-spacing: 0;
+    font-weight: 500;
+    color: #663700;
+  }
+  .slick-prev::before{
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 21px;
+    background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%2221%22%20viewBox%3D%220%200%2012%2021%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M8.62951%2010.6216C6.30165%2013.0207%204.0285%2015.3606%201.75795%2017.7032C1.55271%2017.9028%201.36035%2018.1161%201.18216%2018.3416C0.976377%2018.6124%200.872888%2018.9511%200.890901%2019.2948C0.908913%2019.6384%201.04722%2019.9636%201.28011%2020.21C1.513%2020.4563%201.82465%2020.6071%202.15715%2020.6342C2.48966%2020.6614%202.82041%2020.5631%203.08797%2020.3576C3.24315%2020.2359%203.38822%2020.101%203.52174%2019.9544C6.11664%2017.2781%208.70984%2014.6012%2011.3013%2011.924C12.2366%2010.959%2012.2327%2010.2722%2011.2908%209.29913C8.66815%206.58871%206.04372%203.88053%203.41755%201.17459C2.86913%200.610108%202.2751%200.491836%201.70974%200.81843C1.16914%201.13024%200.849977%201.6329%200.988059%202.26189C1.0972%202.66569%201.30801%203.03248%201.59903%203.32501C3.74582%205.57488%205.91737%207.80055%208.07979%2010.0343C8.24653%2010.2023%208.40676%2010.381%208.62951%2010.6216Z%22%20fill%3D%22white%22/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transform: rotate(180deg);
+  }
+  .slick-next::before{
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 21px;
+    background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%2221%22%20viewBox%3D%220%200%2012%2021%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M8.62951%2010.6216C6.30165%2013.0207%204.0285%2015.3606%201.75795%2017.7032C1.55271%2017.9028%201.36035%2018.1161%201.18216%2018.3416C0.976377%2018.6124%200.872888%2018.9511%200.890901%2019.2948C0.908913%2019.6384%201.04722%2019.9636%201.28011%2020.21C1.513%2020.4563%201.82465%2020.6071%202.15715%2020.6342C2.48966%2020.6614%202.82041%2020.5631%203.08797%2020.3576C3.24315%2020.2359%203.38822%2020.101%203.52174%2019.9544C6.11664%2017.2781%208.70984%2014.6012%2011.3013%2011.924C12.2366%2010.959%2012.2327%2010.2722%2011.2908%209.29913C8.66815%206.58871%206.04372%203.88053%203.41755%201.17459C2.86913%200.610108%202.2751%200.491836%201.70974%200.81843C1.16914%201.13024%200.849977%201.6329%200.988059%202.26189C1.0972%202.66569%201.30801%203.03248%201.59903%203.32501C3.74582%205.57488%205.91737%207.80055%208.07979%2010.0343C8.24653%2010.2023%208.40676%2010.381%208.62951%2010.6216Z%22%20fill%3D%22white%22/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  .sp-btn{
+    background-color: #663700;
+    border-radius: 10px;
+    padding: 18px 32px 18px 32px;
+    font-family:'DM Sans-Bold';
+    font-size: 18px;
+    line-height: 23px;
+    letter-spacing: 0;
+    color: #FFFFFF;
+
+  }
+  .button, .shopify-challenge__button, .customer button, button.shopify-payment-button__button--unbranded{
+    --border-opacity:0px !important;
+  }
+  .collection__view-all a:not(.link){
+    margin: 0px !important;
+  }
+  .view-all-svg{
+    margin-left: 6.1px;
+  }
+  .slick-disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+    position: relative;
+  }
+  

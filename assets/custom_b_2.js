@@ -1,26 +1,20 @@
 
-  document.addEventListener("DOMContentLoaded", function() {
+  $(document).ready(function(){
     $('.custom-card-list').slick({
-      slidesToShow: 4,
+      infinite: true,
+      slidesToShow: 3,
       slidesToScroll: 1,
-      infinite: false,
       arrows: true,
-      dots: false,
+      dots: true,
       responsive: [
         {
           breakpoint: 1024,
-          settings: {
-            slidesToShow: 3
-          }
-        },
-        {
-          breakpoint: 768,
           settings: {
             slidesToShow: 2
           }
         },
         {
-          breakpoint: 480,
+          breakpoint: 600,
           settings: {
             slidesToShow: 1
           }

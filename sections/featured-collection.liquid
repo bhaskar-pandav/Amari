@@ -8,6 +8,10 @@
 {{ 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css' | stylesheet_tag }}
 
 
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+{% comment %} <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/> {% endcomment %}
+
 {% if section.settings.image_shape == 'blob' %}
   {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
 {%- endif -%}
@@ -91,7 +95,7 @@
       {%- endif -%}
     </div>
 
-    <slider-component class="slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+    <slider-component class="pr-info slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
     <ul
         id="Slider-{{ section.id }}"
         data-id="{{ section.id }}"
@@ -158,111 +162,25 @@
         
       
       </ul>
-      <div class="slider-buttons">
-        <div class="prev-btn">
-        <button
-          type="button"
-          class="slider-button slider-button--prev"
-          name="previous"
-          aria-label="Previous"
-          aria-controls="Slider-{{ section.id }}"
-        >
-          <span class="svg-wrapper">‹</span>
-        </button>
-        </div>
-        
-        <div class="nxt-btn">
-        <button
-          type="button"
-          class="slider-button slider-button--next"
-          name="next"
-          aria-label="Next"
-          aria-controls="Slider-{{ section.id }}"
-        >
-          <span class="svg-wrapper">›</span>
-        </button>
-        </div>
-      </div>
-      <style>
-        #Slider-{{ section.id }} {
-          display: flex;
-          overflow-x: auto;
-          scroll-snap-type: x mandatory;
-          scroll-behavior: smooth;
-          
-          scrollbar-width: none; /* Firefox */
-          -ms-overflow-style: none; /* IE 10+ */
-        }
-      
-        #Slider-{{ section.id }}::-webkit-scrollbar {
-          display: none; /* WebKit */
-        }
-      
-        #Slider-{{ section.id }} li {
-          flex: 0 0 auto;
-          scroll-snap-align: start;
-        }
-      </style>
-      
-      
-      
-      
+  
     </slider-component>
-
-    <script>
-      window.addEventListener('load', function () {
-        const slider = document.getElementById('Slider-{{ section.id }}');
-        const prevButton = document.querySelector('.slider-button--prev');
-        const nextButton = document.querySelector('.slider-button--next');
-        const card = slider.querySelector('li');
-        const cardStyle = getComputedStyle(card);
-        const cardWidth = card.offsetWidth + parseInt(cardStyle.marginRight);
-    
-        function updateButtonState() {
-          if (slider.scrollLeft <= 0) {
-            prevButton.classList.add('disabled');
-          } else {
-            prevButton.classList.remove('disabled');
-          }
-
-          const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
-          if (slider.scrollLeft >= maxScrollLeft - 1) {
-            nextButton.classList.add('disabled');
-          } else {
-            nextButton.classList.remove('disabled');
-          }
-        }
-    
-        prevButton.addEventListener('click', function () {
-          slider.scrollBy({ left: -cardWidth, behavior: 'smooth' });
-        });
-    
-        nextButton.addEventListener('click', function () {
-          slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
-        });
-        
-        slider.addEventListener('scroll', updateButtonState);
-        requestAnimationFrame(updateButtonState);
-      });
-    </script>
-    
-    
-    
-    
-
-
-
-    {%- if section.settings.show_view_all and more_in_collection -%}
+ 
       <div class="center collection__view-all{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         <a
           href="{{ section.settings.collection.url }}"
-          class="{% if section.settings.view_all_style == 'link' %}link underlined-link{% elsif section.settings.view_all_style == 'solid' %}button{% else %}button button--secondary{% endif %}"
+          class="{% if section.settings.view_all_style == 'link' %}link underlined-link{% elsif section.settings.view_all_style == 'solid' %}button sp-btn{% else %}button button--secondary{% endif %}"
           aria-label="{{ 'sections.featured_collection.view_all_label' | t: collection_name: section.settings.collection.title | escape }}"
         >
-          {{ 'sections.featured_collection.view_all' | t }}
+          {{ 'sections.featured_collection.view_all' | t }} 
+          <div class="view-all-svg" >
+          <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.8766 12.1568L0.658203 10.9384L9.01294 2.58371H1.52849V0.84314H11.9719V11.2866H10.2313V3.80211L1.8766 12.1568Z" fill="white"/>
+          </svg>
+          </div>
+          
         </a>
       </div>
-    {%- endif -%}
+    
     {% if section.settings.image_shape == 'arch' %}
       {{ 'mask-arch.svg' | inline_asset_content }}
     {%- endif -%}
@@ -582,52 +500,47 @@
   ]
 }
 {% endschema %}
-<script
-  src="https://code.jquery.com/jquery-3.7.1.min.js"
-  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-  crossorigin="anonymous" defer></script>
-  <script
-  src="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.9.0/slick/slick.min.js"
-  type="text/javascript"
-  defer
-  crossorigin="anonymous">
-</script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
 
-<script>
-$('.grid').slick({
-  dots: true,
-  button:true,
-  infinite: false,
-  speed: 300,
-  slidesToShow: 4,
-  slidesToScroll: 4,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        infinite: true,
-        dots: true
-      }
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
-  ]
-});
-</script>
+  <!-- Slick JS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      $('.product-grid').slick({
+        dots: true,
+        infinite: false,
+        speed: 300,
+        arrows: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              infinite: false,
+              dots: true
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
+      });
+    });
+  </script>
+  
