@@ -935,7 +935,7 @@
 }
 @media screen and (max-width:575px){
   .svg-fourth{
-    left: 480px;
+   display: none;
   }
   .svg-second{
     left: 5px;
@@ -948,10 +948,7 @@
   .top-img{
     display: none;
   }
-  .svg-fourth{
-    top: 510px;
-    left: 335px;
-  }
+ 
   .banner__box h2{
     padding-top: 0px;
     margin-top:0px;
@@ -1018,17 +1015,11 @@
   }
 }
 @media screen and (max-width:375px){
-  .svg-fourth{
-    left: 299px;
-  }
   .svg-third{
     top: 970px;
   }
 }
 @media screen and (max-width:320px){
-  .svg-fourth{
-    left: 240px;
-  }
   .banner__box h2{
     font-size: 26px;
     line-height: 36px;
@@ -1048,8 +1039,5 @@
   }
   .svg-second{
     top: 305px;
-  }
-  .svg-fourth{
-    top: 409px;
   }
 }

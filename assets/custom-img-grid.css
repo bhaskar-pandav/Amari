@@ -1,0 +1,106 @@
+/* font-family */
+@font-face {
+    font-family: 'Albert Sans-Bold';
+    src: url('https://cdn.shopify.com/s/files/1/0595/8798/5489/files/AlbertSans-Bold.ttf?v=1745234861') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DM Sans-Bold';
+    src: url('https://cdn.shopify.com/s/files/1/0595/8798/5489/files/DMSans_18pt-Bold.ttf?v=1745235869') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DM Sans-Medium';
+    src: url('https://cdn.shopify.com/s/files/1/0595/8798/5489/files/DMSans_18pt-Medium.ttf?v=1745236733') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+  .ig-svg{
+    margin-left: 10px;
+  }
+.image-card button {
+    font-family: 'DM Sans-Bold';
+    font-weight: 700;
+    width: 200px;
+    padding: 18px 32px;
+    border: none;
+    background-color: #663700;
+    color: #FFFFFF;
+    font-size: 18px;
+    line-height: 23px;
+    letter-spacing: 0;
+    border-radius: 10px;
+  }
+.img-grid-3 button,
+.img-grid-4 button{
+    background-color: #F5EDDC;
+    color: #663700;
+}
+.image-card .card-content {
+    max-width: 60%;
+  }
+  
+  .img-grid-2  .grid-content-2 {
+    margin-left: auto;
+    text-align: left;
+    align-items: flex-end;
+    max-width: 40%;
+    width: 100%;
+  }
+ .img-grid-1 h3,
+ .img-grid-2 h3,
+ .img-grid-3 h3,
+ .img-grid-4 h4{
+    font-family: 'Albert Sans-Bold';
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 57px;
+    letter-spacing: 0;
+  }
+  .img-grid-1 h3,
+ .img-grid-2 h3{
+    color: #663700;
+ }
+ .img-grid-3 h3{
+    color:#FFAA01;
+ }
+  .img-grid-1 p,
+ .img-grid-2 p,
+ .img-grid-3 p,
+ .img-grid-4 p{
+   font-family: 'DM Sans-Medium'; 
+   font-weight: 500;
+   font-size: 16px;
+   line-height: 26px;
+   letter-spacing: 0;
+ }
+ .img-grid-1 p,
+ .img-grid-2 p{
+    color: #4A4A4A;
+ }
+ .img-grid-3 p,
+ .img-grid-4 p,
+ .img-grid-3 h4{
+    color: #FFFFFF;
+ }
+  .img-grid-1 h4 ,
+  .img-grid-2 h4,
+  .img-grid-3 h4{
+    font-family: 'DM Sans-Bold';
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 45px;
+    letter-spacing: 0;
+  }
+ 
+ .img-grid-1 h4{
+    color: #4A4A4A;
+ }
+ .img-grid-2 h4{
+    color: #663700;
+ }
+.img-grid-4 h4{
+  color: #F5EDDC;
+}

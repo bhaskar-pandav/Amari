@@ -1,0 +1,313 @@
+{{ 'custom-img-grid.css' | asset_url |  stylesheet_tag }}
+<div class="image-grid-wrapper">
+  
+  <div class="image-card img-grid-1" style="background-image: url({{ section.settings.bg_image_1 | img_url: 'master' }});">
+    <div class="grid-content-1">
+    {% if section.settings.discount_1 %}
+      <h3>{{ section.settings.discount_1 }}</h3>
+    {% endif %}
+    {% if section.settings.title_1 %}
+      <h4>{{ section.settings.title_1 }}</h4>
+    {% endif %}
+    {% if section.settings.desc_1 %}
+      <p>{{ section.settings.desc_1 }}</p>
+    {% endif %}
+    {% if section.settings.button_text_1 and section.settings.button_link_1 %}
+        <button
+          class="{{ section.settings.button_class_1 }}"
+          onclick="window.location.href='{{ section.settings.button_link_1 }}'">
+          {{ section.settings.button_text_1 }} 
+          <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg" class="ig-svg">
+          <path d="M1.2184 12.1568L0 10.9384L8.35474 2.58371H0.870285V0.84314H11.3137V11.2866H9.57314V3.80211L1.2184 12.1568Z" fill="white"/>
+          </svg>
+          
+        </button>
+      {% endif %}
+      </div>
+  </div>
+
+ 
+  <div class="image-card img-grid-2" style="background-image: url({{ section.settings.bg_image_2 | img_url: 'master' }});">
+    <div class="grid-content-2">
+    {% if section.settings.discount_2 %}
+      <h3>{{ section.settings.discount_2 }}</h3>
+    {% endif %}
+    {% if section.settings.title_2 %}
+      <h4>{{ section.settings.title_2 }}</h4>
+    {% endif %}
+    {% if section.settings.desc_2 %}
+      <p>{{ section.settings.desc_2 }}</p>
+    {% endif %}
+    {% if section.settings.button_text_2 and section.settings.button_link_2 %}
+        <button
+          class="{{ section.settings.button_class_2 }}"
+          onclick="window.location.href='{{ section.settings.button_link_2 }}'">
+          {{ section.settings.button_text_2 }} 
+          <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg" class="ig-svg">
+          <path d="M1.2184 12.1568L0 10.9384L8.35474 2.58371H0.870285V0.84314H11.3137V11.2866H9.57314V3.80211L1.2184 12.1568Z" fill="white"/>
+          </svg>
+          
+        </button>
+      {% endif %}
+      </div>
+    </div>   
+  
+
+  
+  <div class="image-card img-grid-3" style="background-image: url({{ section.settings.bg_image_3 | img_url: 'master' }});">
+    <div class="grid-content-3">
+    {% if section.settings.discount_3 %}
+      <h3>{{ section.settings.discount_3 }}</h3>
+    {% endif %}
+    {% if section.settings.title_3 %}
+      <h4>{{ section.settings.title_3 }}</h4>
+    {% endif %}
+    {% if section.settings.desc_3 %}
+      <p>{{ section.settings.desc_3 }}</p>
+    {% endif %}
+    {% if section.settings.button_text_3 and section.settings.button_link_3 %}
+        <button
+          class="{{ section.settings.button_class_3 }}"
+          onclick="window.location.href='{{ section.settings.button_link_3 }}'">
+          {{ section.settings.button_text_3 }} 
+          <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg" class="ig-svg">
+          <path d="M1.2184 12.1568L0 10.9384L8.35474 2.58371H0.870285V0.84314H11.3137V11.2866H9.57314V3.80211L1.2184 12.1568Z" fill="#663700"/>
+          </svg>
+          
+        </button>
+      {% endif %}
+      </div>
+  </div>
+
+  
+  <div class="image-card img-grid-4" style="background-image: url({{ section.settings.bg_image_4 | img_url: 'master' }});">
+    <div class="grid-content-4">
+    {% if section.settings.discount_4 %}
+      <h3>{{ section.settings.discount_4 }}</h3>
+    {% endif %}
+    {% if section.settings.title_4 %}
+      <h4>{{ section.settings.title_4 }}</h4>
+    {% endif %}
+    {% if section.settings.desc_4 %}
+      <p>{{ section.settings.desc_4 }}</p>
+    {% endif %}
+    {% if section.settings.button_text_4 and section.settings.button_link_4 %}
+        <button
+          class="{{ section.settings.button_class_4 }}"
+          onclick="window.location.href='{{ section.settings.button_link_4 }}'">
+          {{ section.settings.button_text_4 }} 
+          <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg" class="ig-svg">
+          <path d="M1.2184 12.1568L0 10.9384L8.35474 2.58371H0.870285V0.84314H11.3137V11.2866H9.57314V3.80211L1.2184 12.1568Z" fill="#663700"/>
+          </svg>
+          
+        </button>
+      {% endif %}
+      </div>
+  </div>
+</div>
+
+<style>
+  .image-grid-wrapper {
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .image-card {
+    flex: 1 1 calc(50% - 20px);
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    padding: 20px;
+    color: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 300px;
+  }
+
+  .image-card h3,
+  .image-card h4,
+  .image-card p {
+    margin: 0 0 10px;
+  }
+</style>
+
+
+{% schema %}
+    {
+      "name": "Image Grid",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Card 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "bg_image_1",
+          "label": "Card 1 - Background Image"
+        },
+        {
+          "type": "text",
+          "id": "discount_1",
+          "label": "Card 1 - Discount"
+        },
+        {
+          "type": "text",
+          "id": "title_1",
+          "label": "Card 1 - Title"
+        },
+        {
+          "type": "textarea",
+          "id": "desc_1",
+          "label": "Card 1 - Description"
+        },
+        {
+          "type": "text",
+          "id": "button_text_1",
+          "label": "Card 1 - Button Text"
+        },
+        {
+          "type": "url",
+          "id": "button_link_1",
+          "label": "Card 1 - Button Link"
+        },
+        {
+          "type": "text",
+          "id": "button_class_1",
+          "label": "Card 1 - Button CSS Class"
+        },
+    
+        {
+          "type": "header",
+          "content": "Card 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "bg_image_2",
+          "label": "Card 2 - Background Image"
+        },
+        {
+          "type": "text",
+          "id": "discount_2",
+          "label": "Card 2 - Discount"
+        },
+        {
+          "type": "text",
+          "id": "title_2",
+          "label": "Card 2 - Title"
+        },
+        {
+          "type": "textarea",
+          "id": "desc_2",
+          "label": "Card 2 - Description"
+        },
+        {
+          "type": "text",
+          "id": "button_text_2",
+          "label": "Card 2 - Button Text"
+        },
+        {
+          "type": "url",
+          "id": "button_link_2",
+          "label": "Card 2 - Button Link"
+        },
+        {
+          "type": "text",
+          "id": "button_class_2",
+          "label": "Card 2 - Button CSS Class"
+        },
+    
+        {
+          "type": "header",
+          "content": "Card 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "bg_image_3",
+          "label": "Card 3 - Background Image"
+        },
+        {
+          "type": "text",
+          "id": "discount_3",
+          "label": "Card 3 - Discount"
+        },
+        {
+          "type": "text",
+          "id": "title_3",
+          "label": "Card 3 - Title"
+        },
+        {
+          "type": "textarea",
+          "id": "desc_3",
+          "label": "Card 3 - Description"
+        },
+        {
+          "type": "text",
+          "id": "button_text_3",
+          "label": "Card 3 - Button Text"
+        },
+        {
+          "type": "url",
+          "id": "button_link_3",
+          "label": "Card 3 - Button Link"
+        },
+        {
+          "type": "text",
+          "id": "button_class_3",
+          "label": "Card 3 - Button CSS Class"
+        },
+    
+        {
+          "type": "header",
+          "content": "Card 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "bg_image_4",
+          "label": "Card 4 - Background Image"
+        },
+        {
+          "type": "text",
+          "id": "discount_4",
+          "label": "Card 4 - Discount"
+        },
+        {
+          "type": "text",
+          "id": "title_4",
+          "label": "Card 4 - Title"
+        },
+        {
+          "type": "textarea",
+          "id": "desc_4",
+          "label": "Card 4 - Description"
+        },
+        {
+          "type": "text",
+          "id": "button_text_4",
+          "label": "Card 4 - Button Text"
+        },
+        {
+          "type": "url",
+          "id": "button_link_4",
+          "label": "Card 4 - Button Link"
+        },
+        {
+          "type": "text",
+          "id": "button_class_4",
+          "label": "Card 4 - Button CSS Class"
+        }
+      ],
+      "presets": [
+        {
+          "name": "Image Grid",
+          "category": "Custom"
+        }
+      ]
+    }
+    {% endschema %}
+    
