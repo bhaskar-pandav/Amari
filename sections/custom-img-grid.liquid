@@ -1,7 +1,9 @@
 {{ 'custom-img-grid.css' | asset_url |  stylesheet_tag }}
 <div class="image-grid-wrapper">
   
-  <div class="image-card img-grid-1" style="background-image: url({{ section.settings.bg_image_1 | img_url: 'master' }});">
+<div class="image-card img-grid-1">
+
+<img src="https://cdn.shopify.com/s/files/1/0595/8798/5489/files/img-grid-1.png?v=1746165441" height="auto" width="" alt="Background Image" class="desktop_image">
     <div class="grid-content-1">
     {% if section.settings.discount_1 %}
       <h3>{{ section.settings.discount_1 }}</h3>
@@ -27,7 +29,8 @@
   </div>
 
  
-  <div class="image-card img-grid-2" style="background-image: url({{ section.settings.bg_image_2 | img_url: 'master' }});">
+  <div class="image-card img-grid-2">
+    <img src="https://cdn.shopify.com/s/files/1/0595/8798/5489/files/img-grid-2.png?v=1746165442" height="auto" width="" alt="Background Image" class="desktop_image">
     <div class="grid-content-2">
     {% if section.settings.discount_2 %}
       <h3>{{ section.settings.discount_2 }}</h3>
@@ -54,7 +57,8 @@
   
 
   
-  <div class="image-card img-grid-3" style="background-image: url({{ section.settings.bg_image_3 | img_url: 'master' }});">
+  <div class="image-card img-grid-3">
+    <img src="https://cdn.shopify.com/s/files/1/0595/8798/5489/files/img-grid-3.png?v=1746165441" height="auto" width="" alt="Background Image" class="desktop_image">
     <div class="grid-content-3">
     {% if section.settings.discount_3 %}
       <h3>{{ section.settings.discount_3 }}</h3>
@@ -80,7 +84,8 @@
   </div>
 
   
-  <div class="image-card img-grid-4" style="background-image: url({{ section.settings.bg_image_4 | img_url: 'master' }});">
+  <div class="image-card img-grid-4">
+    <img src="https://cdn.shopify.com/s/files/1/0595/8798/5489/files/img-grid-4.png?v=1746165441" height="auto" width="" alt="Background Image" class="desktop_image">
     <div class="grid-content-4">
     {% if section.settings.discount_4 %}
       <h3>{{ section.settings.discount_4 }}</h3>
@@ -108,12 +113,14 @@
 
 <style>
   .image-grid-wrapper {
-    max-width: 95%;
+    max-width: 1820px;
+    width:100%;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
     justify-content: center;
+    padding: 0px 50px;
   }
 
   .image-card {
@@ -126,8 +133,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    min-height: 300px;
+    /* min-height: 300px; */
   }
 
   .image-card h3,
