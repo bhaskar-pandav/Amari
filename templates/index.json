@@ -246,6 +246,54 @@
         "button_class_4": ""
       }
     },
+    "image_with_text_JqAqBB": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_y3Yiq9": {
+          "type": "heading",
+          "settings": {
+            "heading": "Unlock Your True Beauty with Our Expertise",
+            "heading_size": "h1"
+          }
+        },
+        "text_rDyDYG": {
+          "type": "text",
+          "settings": {
+            "text": "<p>At Amari, we believe in the transformative power of skincare. Our journey began with a vision to redefine beauty by crafting products that go beyond the surface, nurturing your skin at its core. Committed to excellence, we curate each formula with precision, infusing nature's finest ingredients to create a harmonious blend of science and beauty.<br/><br/></p>",
+            "text_style": "body"
+          }
+        },
+        "button_z4tbXN": {
+          "type": "button",
+          "settings": {
+            "button_label": "Read More",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_y3Yiq9",
+        "text_rDyDYG",
+        "button_z4tbXN"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Image_with_txt_Section.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 100,
+        "padding_bottom": 36
+      }
+    },
     "slick_slider_yNmddF": {
       "type": "slick-slider",
       "blocks": {
@@ -336,6 +384,7 @@
     "custom_img_with_txt_eA6np9",
     "featured_collection_QjTFWw",
     "custom_img_grid_TKxpgQ",
+    "image_with_text_JqAqBB",
     "slick_slider_yNmddF"
   ]
 }

@@ -70,7 +70,7 @@ body{
     background-color: black;
   }
 
-  .grid__item{
+  .slick-track .grid__item{
     max-width: 407.21px !important;
     width: 100%;
   }
