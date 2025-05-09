@@ -16,9 +16,9 @@
   src: url('https://cdn.shopify.com/s/files/1/0595/8798/5489/files/DMSans_18pt-Medium.ttf?v=1745236733') format('truetype');
   font-weight: 500;
   font-style: normal;
-}
+} 
 
-.grid{
+.pr-info .grid{
     position: relative;
     column-gap: 30.15px;
     flex-wrap: nowrap;
@@ -75,7 +75,7 @@ body{
     width: 100%;
   }
   
-  .product-grid .slick-dots{
+  .product-grid .slick-dots{ 
     display: none !important;
   }
 

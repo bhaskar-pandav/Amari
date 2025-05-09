@@ -8,7 +8,7 @@
   }
 }
 
-.blog__title {
+.blog__title {  
   margin: 0;
 }
 
@@ -57,4 +57,58 @@
       margin-left: var(--grid-desktop-horizontal-spacing);
     }
   }
+}
+
+/*CSS*/
+@font-face {
+  font-family: 'DM Sans-Medium';
+  src: url('https://cdn.shopify.com/s/files/1/0595/8798/5489/files/DMSans_18pt-Medium.ttf?v=1745236733') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Albert Sans-Bold';
+  src: url('https://cdn.shopify.com/s/files/1/0595/8798/5489/files/AlbertSans-Bold.ttf?v=1745234861') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+.blog_sec .blog_container{
+  max-width: 1820px;
+  width: 100%;
+  margin: 0 auto;
+}
+.articles-wrapper .blog__post{
+  max-width: 554px;
+  width: 100%;
+}
+.blog-gap{
+  column-gap: 29px;
+}
+.blog_container .title-wrapper-with-link{
+  justify-content: center;
+}
+.article-card-wrapper .card__inner{
+  --ratio-percent:76.71664% !important;
+}
+.article-card__image-wrapper .article-card__info.caption-with-letter-spacing.h5{
+    position: absolute;
+    bottom: 0;
+    padding: 10px 15px;
+    background: #B46100;
+    border-radius: 0px 10px 0px 10px;
+    font-family: 'DM Sans-Medium';
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 29px;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    text-transform: capitalize;
+}
+.blog_container .title-wrapper-with-link .blog__title{
+  font-family: 'Albert Sans-Bold';
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 57px;
+  letter-spacing: 0;
+  color: #663700;
 }
