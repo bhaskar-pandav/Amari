@@ -80,9 +80,25 @@
                   >
                     {{ block.settings.caption | escape }}
                   </p>
+  
                 {%- when 'text' -%}
                   <div class="image-with-text__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
                     {{ block.settings.text }}
+                  </div>
+                  <div class="counter-blocks" style="display:flex; gap:40px; flex-wrap:wrap; margin-top:30px;">
+                    {% for block in section.blocks %}
+                      {% if block.type == 'counter' %}
+                        <div class="counter-block" style="text-align:center;">
+                          <div class="counter-value" data-target="{{ block.settings.value | remove: 'K+' | remove: '+' | remove: 'K' }}">
+                           {{ block.settings.value }}
+                          </div>
+
+                          <div class="counter-label">
+                            {{ block.settings.label }}
+                          </div>
+                        </div>
+                      {% endif %}
+                    {% endfor %}
                   </div>
                 {%- when 'button' -%}
                   {%- if block.settings.button_label != blank -%}
@@ -94,9 +110,13 @@
                       {% endif %}
                       class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}"
                       {{ block.shopify_attributes }}
-                    >
+                    > 
                       {{ block.settings.button_label | escape }}
-                    </a>
+                    </a> 
+                    <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.2184 12.1568L0 10.9384L8.35474 2.58371H0.870285V0.84314H11.3137V11.2866H9.57314V3.80211L1.2184 12.1568Z" fill="white"/>
+                    </svg>
+
                   {%- endif -%}
               {%- endcase -%}
             {%- endfor -%}
@@ -106,6 +126,55 @@
     </div>
   </div>
 </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const counters = document.querySelectorAll('.counter-value');
+    let animated = false;
+
+    const observer = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting && !animated) {
+        animated = true;
+
+        counters.forEach(counter => {
+          const rawText = counter.textContent.trim();
+          const isK = rawText.includes('K');
+          const isPlus = rawText.includes('+');
+
+          const target = parseInt(counter.dataset.target); // from data-target (clean number)
+          let current = 0;
+          const interval = 100; // speed
+
+          function update() {
+            current++;
+            let display;
+
+            if (isK) {
+              display = current + 'K';
+            } else {
+              display = current;
+            }
+
+            if (isPlus) {
+              display += '+';
+            }
+
+            counter.textContent = display;
+
+            if (current < target) {
+              setTimeout(update, interval);
+            }
+          }
+
+          update();
+        });
+      }
+    }, { threshold: 0.5 });
+
+    const counterSection = document.querySelector('.counter-blocks');
+    if (counterSection) observer.observe(counterSection);
+  });
+</script>
+
 
 {% schema %}
 {
@@ -323,6 +392,24 @@
   ],
   "blocks": [
     {
+  "type": "counter",
+  "name": "Counter Block",
+  "settings": [
+    {
+      "type": "text",
+      "id": "value",
+      "label": "Counter Value",
+      "default": "8K+"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Counter Label",
+      "default": "Global Customers"
+    }
+  ]
+},
+    {
       "type": "heading",
       "name": "t:sections.image-with-text.blocks.heading.name",
       "limit": 1,
@@ -332,6 +419,18 @@
           "id": "heading",
           "default": "t:sections.image-with-text.blocks.heading.settings.heading.default",
           "label": "t:sections.image-with-text.blocks.heading.settings.heading.label"
+        },
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Value",
+          "default": "8K+"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Global Customers"
         },
         {
           "type": "select",

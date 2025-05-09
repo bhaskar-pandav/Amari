@@ -249,10 +249,33 @@
     "image_with_text_JqAqBB": {
       "type": "image-with-text",
       "blocks": {
+        "counter_QJgXrT": {
+          "type": "counter",
+          "settings": {
+            "value": "8K+",
+            "label": "Global Customers"
+          }
+        },
+        "counter_zyi8aW": {
+          "type": "counter",
+          "settings": {
+            "value": "12K+",
+            "label": "Products Delivered"
+          }
+        },
+        "counter_mh9JHD": {
+          "type": "counter",
+          "settings": {
+            "value": "10+",
+            "label": "Years In Business"
+          }
+        },
         "heading_y3Yiq9": {
           "type": "heading",
           "settings": {
             "heading": "Unlock Your True Beauty with Our Expertise",
+            "value": "8K+",
+            "label": "Global Customers",
             "heading_size": "h1"
           }
         },
@@ -273,6 +296,9 @@
         }
       },
       "block_order": [
+        "counter_QJgXrT",
+        "counter_zyi8aW",
+        "counter_mh9JHD",
         "heading_y3Yiq9",
         "text_rDyDYG",
         "button_z4tbXN"

@@ -419,6 +419,24 @@
 
 
 /* css */
+@font-face {
+  font-family: 'Albert Sans-Bold';
+  src: url('https://cdn.shopify.com/s/files/1/0595/8798/5489/files/AlbertSans-Bold.ttf?v=1745234861') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'DM Sans-Medium';
+  src: url('https://cdn.shopify.com/s/files/1/0595/8798/5489/files/DMSans_18pt-Medium.ttf?v=1745236733') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'DM Sans-Bold';
+  src: url('https://cdn.shopify.com/s/files/1/0595/8798/5489/files/DMSans_18pt-Bold.ttf?v=1745235869') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
 .img-w-txt .page-width{
   max-width: 1528px !important;
   width: 100%;
@@ -443,4 +461,48 @@
 }
 .image-with-text__text-item .image-with-text__content{
   padding: 0px;
+}
+.image-with-text__content .inline-richtext{
+  font-family: 'Albert Sans-Bold';
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 57px;
+  letter-spacing: 0;
+  color: #663700;
+}
+.image-with-text__content .image-with-text__text p{
+  font-family: 'DM Sans-Medium';
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0;
+  color: #4A4A4A;
+}
+.image-with-text__content .button--primary{
+  border-radius: 10px;
+  padding: 18px 32px;
+  background-color: #663700;
+  font-family: 'DM Sans-Bold';
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
+  letter-spacing: 0;
+  color: #FFFFFF;
+}
+/* Counter */
+.counter-block .counter-value{
+  font-family: 'Albert Sans-Bold';
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 57px;
+  letter-spacing: 0;
+  color: #B46100;
+}
+.counter-block .counter-label{
+  font-family: 'DM Sans-Medium';
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0;
+  color: #4A4A4A;
 }
