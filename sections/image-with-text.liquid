@@ -73,6 +73,11 @@
                   >
                     {{ block.settings.heading }}
                   </h2>
+                  <div class="image-with-text__media-item mobile-img image-with-text__media-item--medium image-with-text__media-item--middle grid__item">
+          <div class="image-with-text__media image-with-text__media--adapt global-media-settings gradient color-scheme-1 media" style="padding-bottom: 104.4349070100143%;"><img src="//training-20-24.myshopify.com/cdn/shop/files/Image_with_txt_Section.png?v=1746703393&amp;width=1500" alt="" srcset="//training-20-24.myshopify.com/cdn/shop/files/Image_with_txt_Section.png?v=1746703393&amp;width=165 165w, //training-20-24.myshopify.com/cdn/shop/files/Image_with_txt_Section.png?v=1746703393&amp;width=360 360w, //training-20-24.myshopify.com/cdn/shop/files/Image_with_txt_Section.png?v=1746703393&amp;width=535 535w, //training-20-24.myshopify.com/cdn/shop/files/Image_with_txt_Section.png?v=1746703393&amp;width=750 750w, //training-20-24.myshopify.com/cdn/shop/files/Image_with_txt_Section.png?v=1746703393&amp;width=1070 1070w, //training-20-24.myshopify.com/cdn/shop/files/Image_with_txt_Section.png?v=1746703393&amp;width=1500 1500w" width="1500" height="1567" loading="lazy" sizes="(min-width: 1200px) 550px,
+              (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)" fetchpriority="auto">
+</div>
+        </div>
                 {%- when 'caption' -%}
                   <p
                     class="image-with-text__text image-with-text__text--caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }} {{ block.settings.text_style }}"
@@ -85,10 +90,10 @@
                   <div class="image-with-text__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
                     {{ block.settings.text }}
                   </div>
-                  <div class="counter-blocks" style="display:flex; gap:40px; flex-wrap:wrap; margin-top:30px;">
+                  <div class="counter-blocks" style="display:flex; gap:115px; margin-top:4px;">
                     {% for block in section.blocks %}
                       {% if block.type == 'counter' %}
-                        <div class="counter-block" style="text-align:center;">
+                        <div class="counter-block">
                           <div class="counter-value" data-target="{{ block.settings.value | remove: 'K+' | remove: '+' | remove: 'K' }}">
                            {{ block.settings.value }}
                           </div>
@@ -112,11 +117,10 @@
                       {{ block.shopify_attributes }}
                     > 
                       {{ block.settings.button_label | escape }}
+                      <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1.2184 12.1568L0 10.9384L8.35474 2.58371H0.870285V0.84314H11.3137V11.2866H9.57314V3.80211L1.2184 12.1568Z" fill="white"/>
+                  </svg>
                     </a> 
-                    <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.2184 12.1568L0 10.9384L8.35474 2.58371H0.870285V0.84314H11.3137V11.2866H9.57314V3.80211L1.2184 12.1568Z" fill="white"/>
-                    </svg>
-
                   {%- endif -%}
               {%- endcase -%}
             {%- endfor -%}
@@ -140,9 +144,9 @@
           const isK = rawText.includes('K');
           const isPlus = rawText.includes('+');
 
-          const target = parseInt(counter.dataset.target); // from data-target (clean number)
+          const target = parseInt(counter.dataset.target); 
           let current = 0;
-          const interval = 100; // speed
+          const interval = 100;
 
           function update() {
             current++;
