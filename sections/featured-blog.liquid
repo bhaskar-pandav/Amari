@@ -136,7 +136,7 @@
               </div>
             </li>
           {%- endfor -%}
-        {%- endif -%}
+        {%- endif -%} 
       </ul>
       {%- if posts_exceed_limit -%}
         <div class="slider-buttons{% if section.settings.post_limit < 3 %} medium-hide{% endif %}{% if section.settings.post_limit < 2 %} small-hide{% endif %}">
@@ -183,7 +183,11 @@
           class="blog__button button"
           aria-labelledby="ViewAll-{{ section.id }} SectionHeading-{{ section.id }}"
         >
-          {{ 'sections.featured_blog.view_all' | t }}
+          {{ 'sections.featured_blog.view_all' | t }} 
+<svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1.87465 12.1568L0.65625 10.9384L9.01099 2.58371H1.52654V0.84314H11.97V11.2866H10.2294V3.80211L1.87465 12.1568Z" fill="white"/>
+</svg>
+
         </a>
       </div>
     {%- endif -%}

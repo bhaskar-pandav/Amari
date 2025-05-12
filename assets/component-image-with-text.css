@@ -519,6 +519,9 @@
 .mobile-img{
   display: none;
 }
+.image-with-text .image-with-text__grid{
+  flex-wrap: nowrap;
+}
 /*responsive*/
 @media screen and (max-width:1366px){
   .image-with-text .img-text-wrapper{
@@ -612,11 +615,15 @@
   h2.image-with-text__heading.inline-richtext.h1,
   .counter-blocks{
     margin: 0 auto;
+    margin-top: 29px;
   }
   .image-with-text__content a.button.button--primary{
     max-width: 100%;
     width: 100%;
   } 
+  .img-w-txt{
+    padding-top: 0px !important;
+  }
 }
 
 @media screen and (max-width:425px){

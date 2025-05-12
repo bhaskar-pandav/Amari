@@ -1,0 +1,198 @@
+{% stylesheet %}
+.customer-review-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 2rem;
+  background: #fff;
+  border: 1px solid #eee;
+}
+
+.customer-review-left {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.customer-review-left h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #5c2c06;
+}
+
+.customer-review-slider {
+  flex: 2;
+  position: relative;
+}
+
+.review-slide {
+  background: #f8f0df;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  position: relative;
+}
+
+.review-slide .quote-icon {
+  width: 40px;
+  margin-bottom: 1rem;
+}
+
+.review-stars {
+  color: #f2b01e;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.review-message {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.reviewer-info {
+  display: flex;
+  align-items: center;
+}
+
+.reviewer-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.reviewer-details {
+  font-size: 0.9rem;
+}
+
+.reviewer-details strong {
+  display: block;
+  color: #000;
+}
+
+{% endstylesheet %}
+
+<div class="customer-review-wrapper">
+  <div class="customer-review-left">
+    <h2>{{ section.settings.title }}</h2>
+  </div>
+  <div class="customer-review-slider">
+   
+    {% for block in section.blocks %}
+      <div class="review-slide">
+        {% if block.settings.quote_image != blank %}
+          <img src="{{ block.settings.quote_image | image_url }}" class="quote-icon" alt="Quote Icon" loading="lazy" width="" height="">
+        {% endif %}
+
+        <div class="review-stars">
+          {% for i in (1..block.settings.star_rating) %}
+            ★
+          {% endfor %}
+        </div>
+
+        <p class="review-message">
+          {{ block.settings.review_message }}
+        </p>
+
+        <div class="reviewer-info">
+          {% if block.settings.profile_image != blank %}
+            <img src="{{ block.settings.profile_image | image_url }}" alt="{{ block.settings.reviewer_name }}" loading="lazy" width="" height="">
+          {% endif %}
+          <div class="reviewer-details">
+            <strong>{{ block.settings.reviewer_name }}</strong>
+            <span>{{ block.settings.reviewer_city }}</span>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+  </div>
+
+ <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+
+  <!-- Slick JS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
+  
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    $('.customer-review-slider').slick({
+      arrows: true,
+      dots: false,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    });
+  });
+</script>
+
+{%  schema  %}  
+{
+  "name": "Customer Review",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "What Our Customers Are Saying"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "quote_image",
+          "label": "Quote Icon Image"
+        },
+        {
+          "type": "range",
+          "id": "star_rating",
+          "label": "Star Rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "textarea",
+          "id": "review_message",
+          "label": "Review Message",
+          "default": "I love this store!"
+        },
+        {
+          "type": "image_picker",
+          "id": "profile_image",
+          "label": "Reviewer Profile Image"
+        },
+        {
+          "type": "text",
+          "id": "reviewer_name",
+          "label": "Reviewer Name",
+          "default": "John Doe"
+        },
+        {
+          "type": "text",
+          "id": "reviewer_city",
+          "label": "Reviewer City",
+          "default": "New York"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Customer Review",
+      "blocks": [
+        {
+          "type": "review"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}  

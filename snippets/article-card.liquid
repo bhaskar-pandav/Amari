@@ -145,6 +145,9 @@
                   {{ article.content | strip_html | truncatewords: 30 }}
                 {%- endif -%}
               </p>
+                <div class="read-more_blog">
+                       <a href="#" class="article-card__read-more-link">  Read More <span aria-hidden="true">↗</span></a> 
+                      </div>
             {%- endif -%}
             <div class="article-card__footer">
               {%- if article.comments_count > 0 and blog.comments_enabled? -%}
