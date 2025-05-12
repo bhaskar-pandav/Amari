@@ -70,6 +70,143 @@
   color: #000;
 }
 
+
+
+.customer-review-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 4rem 2rem;
+  background-color: #fff;
+}
+
+.customer-review-left {
+  flex: 1;
+  min-width: 250px;
+  padding-right: 2rem;
+}
+
+.customer-review-left h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #5c2c06;
+  line-height: 1.4;
+}
+
+.customer-review-slider {
+  flex: 2;
+  max-width: 800px;
+  position: relative;
+}
+
+.review-slide {
+  background-color: #f8f0df;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  min-height: 250px;
+  margin: 0 1rem;
+  position: relative;
+}
+
+.quote-icon {
+  width: 40px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.review-stars {
+  font-size: 1.2rem;
+  color: #f2b01e;
+  margin-bottom: 1rem;
+}
+
+.review-message {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.reviewer-info {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.reviewer-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.reviewer-details strong {
+  display: block;
+  color: #000;
+  font-size: 1rem;
+}
+
+.reviewer-details span {
+  color: #444;
+  font-size: 0.9rem;
+}
+
+/* Arrows styled like your design */
+.slick-arrow {
+  position: absolute;
+  right: -45px;
+  background-color: #5c2c06;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 10;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.slick-prev {
+  top: 20%;
+}
+
+.slick-next {
+  bottom: 20%;
+}
+
+.slick-arrow:hover {
+  background-color: #3a1c04;
+}
+
+/* Responsive Fix */
+@media screen and (max-width: 768px) {
+  .customer-review-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .customer-review-left {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .customer-review-slider {
+    max-width: 100%;
+  }
+
+  .slick-arrow {
+    display: none !important;
+  }
+}
+
+
 {% endstylesheet %}
 
 <div class="customer-review-wrapper">
@@ -116,16 +253,21 @@
   
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    $('.customer-review-slider').slick({
-      arrows: true,
-      dots: false,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-    });
+    setTimeout(function () {
+      $('.customer-review-slider').not('.slick-initialized').slick({
+        arrows: true,
+        dots: false,
+        infinite: true,
+        speed: 600,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        prevArrow: '<button type="button" class="slick-prev">↑</button>',
+        nextArrow: '<button type="button" class="slick-next">↓</button>',
+      });
+    }, 300); // Delay to ensure DOM & jQuery ready
   });
 </script>
+
 
 {%  schema  %}  
 {

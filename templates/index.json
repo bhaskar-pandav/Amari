@@ -338,6 +338,53 @@
         "padding_bottom": 36
       }
     },
+    "customer_review_H6JGJN": {
+      "type": "customer_review",
+      "blocks": {
+        "review_8twKX9": {
+          "type": "review",
+          "settings": {
+            "quote_image": "shopify://shop_images/Vector_5.png",
+            "star_rating": 3,
+            "review_message": "I am a frequent shopper at this online jewelry store, and I can't praise them enough. They offer a wide range of styles, from classic to contemporary, and their prices are reasonable. The jewelry arrives beautifully packaged and always exceeds my expectations.",
+            "profile_image": "shopify://shop_images/Image_4_f503a9cf-a8eb-497f-b410-1a951c25fc36.png",
+            "reviewer_name": "Samuel Hanna",
+            "reviewer_city": "New York"
+          }
+        },
+        "review_qpWfy4": {
+          "type": "review",
+          "settings": {
+            "quote_image": "shopify://shop_images/Vector_5.png",
+            "star_rating": 4,
+            "review_message": "I am a frequent shopper at this online jewelry store, and I can't praise them enough. They offer a wide range of styles, from classic to contemporary, and their prices are reasonable. The jewelry arrives beautifully packaged and always exceeds my expectations.",
+            "profile_image": "shopify://shop_images/Image_4_f503a9cf-a8eb-497f-b410-1a951c25fc36.png",
+            "reviewer_name": "John Doe",
+            "reviewer_city": "New York"
+          }
+        },
+        "review_Q7Nxnf": {
+          "type": "review",
+          "settings": {
+            "quote_image": "shopify://shop_images/Vector_5.png",
+            "star_rating": 5,
+            "review_message": "I am a frequent shopper at this online jewelry store, and I can't praise them enough. They offer a wide range of styles, from classic to contemporary, and their prices are reasonable. The jewelry arrives beautifully packaged and always exceeds my expectations.",
+            "profile_image": "shopify://shop_images/Image_4_f503a9cf-a8eb-497f-b410-1a951c25fc36.png",
+            "reviewer_name": "Samuel Hanna",
+            "reviewer_city": "New York"
+          }
+        }
+      },
+      "block_order": [
+        "review_8twKX9",
+        "review_qpWfy4",
+        "review_Q7Nxnf"
+      ],
+      "name": "Customer Review",
+      "settings": {
+        "title": "What Our Customers Are Saying"
+      }
+    },
     "slick_slider_yNmddF": {
       "type": "slick-slider",
       "blocks": {
@@ -430,6 +477,7 @@
     "custom_img_grid_TKxpgQ",
     "image_with_text_JqAqBB",
     "featured_blog_r6DDkT",
+    "customer_review_H6JGJN",
     "slick_slider_yNmddF"
   ]
 }
