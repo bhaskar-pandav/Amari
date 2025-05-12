@@ -1,89 +1,64 @@
 {% stylesheet %}
-.customer-review-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 4rem 2rem;
-  background: #fff;
-  border: 1px solid #eee;
-}
 
-.customer-review-left {
-  flex: 1;
-  padding-right: 2rem;
-}
 
-.customer-review-left h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #5c2c06;
-}
-
-.customer-review-slider {
-  flex: 2;
+.review-slide-wrapper {
   position: relative;
+  width: fit-content; /* or 100% depending on your layout */
 }
 
-.review-slide {
-  background: #f8f0df;
-  padding: 2rem;
-  border-radius: 0.5rem;
-  position: relative;
-}
-
-.review-slide .quote-icon {
-  width: 40px;
-  margin-bottom: 1rem;
-}
-
-.review-stars {
-  color: #f2b01e;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
-
-.review-message {
-  font-size: 1rem;
-  color: #333;
-  margin-bottom: 1.5rem;
-}
-
-.reviewer-info {
+.slick-prev,
+.slick-next {
+  position: absolute;
+  right: -30px; /* adjust as needed */
+  background: #7A4B00; /* your button background color */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.3s ease;
 }
 
-.reviewer-info img {
-  width: 40px;
-  height: 40px;
-  border-radius: 100%;
-  object-fit: cover;
-  margin-right: 1rem;
+.slick-prev:hover,
+.slick-next:hover {
+  background: #5a3600;
 }
 
-.reviewer-details {
-  font-size: 0.9rem;
+.slick-prev {
+  top: 40%;
 }
 
-.reviewer-details strong {
-  display: block;
-  color: #000;
+.slick-next {
+  top: 55%;
 }
 
 
+.customer-review-slider .slick-prev{
+  left: auto;
+  right: 0;
+}
 
+/* Wrapper */
 .customer-review-wrapper {
   display: flex;
+  max-width: 1685px;
   justify-content: space-between;
-  align-items: flex-start;
   flex-wrap: wrap;
-  padding: 4rem 2rem;
+  padding: 64px 50px;
   background-color: #fff;
+  margin: 0 auto;
 }
 
+/* Left Panel */
 .customer-review-left {
   flex: 1;
-  min-width: 250px;
+  max-width: 16.6%;
   padding-right: 2rem;
 }
 
@@ -94,12 +69,14 @@
   line-height: 1.4;
 }
 
+/* Slider */
 .customer-review-slider {
   flex: 2;
   max-width: 800px;
   position: relative;
 }
 
+/* Slide */
 .review-slide {
   background-color: #f8f0df;
   border-radius: 0.5rem;
@@ -109,18 +86,20 @@
   position: relative;
 }
 
+/* Quote Icon */
 .quote-icon {
   width: 40px;
-  height: auto;
   margin-bottom: 1rem;
 }
 
+/* Stars */
 .review-stars {
   font-size: 1.2rem;
   color: #f2b01e;
   margin-bottom: 1rem;
 }
 
+/* Message */
 .review-message {
   font-size: 1rem;
   color: #333;
@@ -128,6 +107,7 @@
   line-height: 1.6;
 }
 
+/* Reviewer Info */
 .reviewer-info {
   display: flex;
   align-items: center;
@@ -153,16 +133,26 @@
   font-size: 0.9rem;
 }
 
-/* Arrows styled like your design */
-.slick-arrow {
+/* Arrow Container */
+.slick-arrow-container {
   position: absolute;
-  right: -45px;
-  background-color: #5c2c06;
+  top: 50%;
+  right: -50px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Arrow Buttons */
+.slick-arrow {
+  background-color: #663700;
+  background: #663700 !important;
   color: #fff;
   border: none;
   border-radius: 50%;
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   font-size: 16px;
   cursor: pointer;
   z-index: 10;
@@ -171,43 +161,44 @@
   justify-content: center;
   transition: background 0.3s ease;
 }
-
-.slick-prev {
-  top: 20%;
+.slick-active{
+  position: relative !important;
 }
-
-.slick-next {
-  bottom: 20%;
+.slick-prev, .slick-next{
+  position: absolute;
+  right: -20px;
 }
-
 .slick-arrow:hover {
   background-color: #3a1c04;
 }
 
-/* Responsive Fix */
+/* Hide arrows on mobile */
 @media screen and (max-width: 768px) {
   .customer-review-wrapper {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding: 40px 20px;
   }
 
   .customer-review-left {
     padding-right: 0;
     margin-bottom: 2rem;
+    max-width: 100%;
   }
 
   .customer-review-slider {
     max-width: 100%;
   }
 
-  .slick-arrow {
+  .slick-arrow-container {
     display: none !important;
   }
 }
 
-
 {% endstylesheet %}
+
+
 
 <div class="customer-review-wrapper">
   <div class="customer-review-left">
@@ -251,22 +242,26 @@
   <!-- Slick JS -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
   
+<!-- Slick JS + jQuery (already deferred) -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     setTimeout(function () {
-      $('.customer-review-slider').not('.slick-initialized').slick({
+      $('.customer-review-slider').slick({
         arrows: true,
         dots: false,
         infinite: true,
         speed: 600,
         slidesToShow: 1,
         slidesToScroll: 1,
-        prevArrow: '<button type="button" class="slick-prev">↑</button>',
-        nextArrow: '<button type="button" class="slick-next">↓</button>',
+        vertical: true,
+        verticalSwiping: true,
+        prevArrow: '<button type="button" class="slick-prev custom-arrow">↑</button>',
+        nextArrow: '<button type="button" class="slick-next custom-arrow">↓</button>',
       });
-    }, 300); // Delay to ensure DOM & jQuery ready
+    }, 300);
   });
 </script>
+
 
 
 {%  schema  %}  
