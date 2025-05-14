@@ -110,10 +110,6 @@ body{
 }
 .pr-info .product-grid .grid__item{
     margin: 0 15px;
-} 
-
-.slick-next:before {
-    content: '›' !important; 
 }
 
   .slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus{
@@ -174,13 +170,6 @@ body{
   .view-all-svg{
     margin-left: 6.1px;
   }
-  .slick-disabled {
-    opacity: 0.5;
-    pointer-events: none;
-    cursor: not-allowed;
-    position: relative;
-  }
-  
 
   /*Responsive*/
   @media screen and (max-width:1440px){

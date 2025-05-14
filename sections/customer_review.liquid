@@ -1,269 +1,63 @@
-{% stylesheet %}
-
-
-.review-slide-wrapper {
-  position: relative;
-  width: fit-content; /* or 100% depending on your layout */
-}
-
-.slick-prev,
-.slick-next {
-  position: absolute;
-  right: -30px; /* adjust as needed */
-  background: #7A4B00; /* your button background color */
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 2;
-  transition: background 0.3s ease;
-}
-
-.slick-prev:hover,
-.slick-next:hover {
-  background: #5a3600;
-}
-
-.slick-prev {
-  top: 40%;
-}
-
-.slick-next {
-  top: 55%;
-}
-
-
-.customer-review-slider .slick-prev{
-  left: auto;
-  right: 0;
-}
-
-/* Wrapper */
-.customer-review-wrapper {
-  display: flex;
-  max-width: 1685px;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 64px 50px;
-  background-color: #fff;
-  margin: 0 auto;
-}
-
-/* Left Panel */
-.customer-review-left {
-  flex: 1;
-  max-width: 16.6%;
-  padding-right: 2rem;
-}
-
-.customer-review-left h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #5c2c06;
-  line-height: 1.4;
-}
-
-/* Slider */
-.customer-review-slider {
-  flex: 2;
-  max-width: 800px;
-  position: relative;
-}
-
-/* Slide */
-.review-slide {
-  background-color: #f8f0df;
-  border-radius: 0.5rem;
-  padding: 2rem;
-  min-height: 250px;
-  margin: 0 1rem;
-  position: relative;
-}
-
-/* Quote Icon */
-.quote-icon {
-  width: 40px;
-  margin-bottom: 1rem;
-}
-
-/* Stars */
-.review-stars {
-  font-size: 1.2rem;
-  color: #f2b01e;
-  margin-bottom: 1rem;
-}
-
-/* Message */
-.review-message {
-  font-size: 1rem;
-  color: #333;
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-}
-
-/* Reviewer Info */
-.reviewer-info {
-  display: flex;
-  align-items: center;
-  margin-top: 1rem;
-}
-
-.reviewer-info img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 1rem;
-}
-
-.reviewer-details strong {
-  display: block;
-  color: #000;
-  font-size: 1rem;
-}
-
-.reviewer-details span {
-  color: #444;
-  font-size: 0.9rem;
-}
-
-/* Arrow Container */
-.slick-arrow-container {
-  position: absolute;
-  top: 50%;
-  right: -50px;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-/* Arrow Buttons */
-.slick-arrow {
-  background-color: #663700;
-  background: #663700 !important;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  font-size: 16px;
-  cursor: pointer;
-  z-index: 10;
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.3s ease;
-}
-.slick-active{
-  position: relative !important;
-}
-.slick-prev, .slick-next{
-  position: absolute;
-  right: -20px;
-}
-.slick-arrow:hover {
-  background-color: #3a1c04;
-}
-
-/* Hide arrows on mobile */
-@media screen and (max-width: 768px) {
-  .customer-review-wrapper {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 40px 20px;
-  }
-
-  .customer-review-left {
-    padding-right: 0;
-    margin-bottom: 2rem;
-    max-width: 100%;
-  }
-
-  .customer-review-slider {
-    max-width: 100%;
-  }
-
-  .slick-arrow-container {
-    display: none !important;
-  }
-}
-
-{% endstylesheet %}
-
-
-
+{{ 'customer-review.css' |  asset_url |  stylesheet_tag }}
 <div class="customer-review-wrapper">
   <div class="customer-review-left">
     <h2>{{ section.settings.title }}</h2>
   </div>
   <div class="customer-review-slider">
-   
     {% for block in section.blocks %}
       <div class="review-slide">
-        {% if block.settings.quote_image != blank %}
-          <img src="{{ block.settings.quote_image | image_url }}" class="quote-icon" alt="Quote Icon" loading="lazy" width="" height="">
-        {% endif %}
-
-        <div class="review-stars">
-          {% for i in (1..block.settings.star_rating) %}
-            ★
-          {% endfor %}
+        <div class="quote-icon-wrapper">
+          {% if section.settings.quote_image != blank %}
+            <img src="{{ section.settings.quote_image | image_url }}" class="quote-icon" alt="Quote Icon" loading="lazy" width="" height="">
+          {% endif %}
         </div>
-
-        <p class="review-message">
-          {{ block.settings.review_message }}
-        </p>
-
+        <div class="review-stars">
+          {% for i in (1..block.settings.star_rating) %}★{% endfor %}
+        </div>
+        <p class="review-message">{{ block.settings.review_message }}</p>
         <div class="reviewer-info">
           {% if block.settings.profile_image != blank %}
             <img src="{{ block.settings.profile_image | image_url }}" alt="{{ block.settings.reviewer_name }}" loading="lazy" width="" height="">
           {% endif %}
           <div class="reviewer-details">
-            <strong>{{ block.settings.reviewer_name }}</strong>
+            <div class="reviewer_name">            
+              <strong>{{ block.settings.reviewer_name }}</strong>
+              </div>
+              <div class="reviewer_city">
             <span>{{ block.settings.reviewer_city }}</span>
+            </div>
           </div>
         </div>
       </div>
     {% endfor %}
-    </div>
   </div>
+</div>
 
  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
 
-  <!-- Slick JS -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
-  
-<!-- Slick JS + jQuery (already deferred) -->
+<!-- Slick -->
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
+
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     setTimeout(function () {
-      $('.customer-review-slider').slick({
+      $('.customer-review-slider').not('.slick-initialized').slick({
         arrows: true,
         dots: false,
-        infinite: true,
-        speed: 600,
+        infinite: false,
+        speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
         vertical: true,
         verticalSwiping: true,
-        prevArrow: '<button type="button" class="slick-prev custom-arrow">↑</button>',
-        nextArrow: '<button type="button" class="slick-next custom-arrow">↓</button>',
+        adaptiveHeight: true,
+        prevArrow: '<button type="button" class="slick-prev">↑</button>',
+        nextArrow: '<button type="button" class="slick-next">↓</button>',
       });
     }, 300);
   });
 </script>
-
-
-
 {%  schema  %}  
 {
   "name": "Customer Review",
@@ -273,18 +67,19 @@
       "id": "title",
       "label": "Section Title",
       "default": "What Our Customers Are Saying"
-    }
+    },
+     {
+          "type": "image_picker",
+          "id": "quote_image",
+          "label": "Quote Icon Image"
+        }
   ],
   "blocks": [
     {
       "type": "review",
       "name": "Review Slide",
       "settings": [
-        {
-          "type": "image_picker",
-          "id": "quote_image",
-          "label": "Quote Icon Image"
-        },
+       
         {
           "type": "range",
           "id": "star_rating",

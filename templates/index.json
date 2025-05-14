@@ -344,7 +344,6 @@
         "review_8twKX9": {
           "type": "review",
           "settings": {
-            "quote_image": "shopify://shop_images/Vector_5.png",
             "star_rating": 3,
             "review_message": "I am a frequent shopper at this online jewelry store, and I can't praise them enough. They offer a wide range of styles, from classic to contemporary, and their prices are reasonable. The jewelry arrives beautifully packaged and always exceeds my expectations.",
             "profile_image": "shopify://shop_images/Image_4_f503a9cf-a8eb-497f-b410-1a951c25fc36.png",
@@ -355,7 +354,6 @@
         "review_qpWfy4": {
           "type": "review",
           "settings": {
-            "quote_image": "shopify://shop_images/Vector_5.png",
             "star_rating": 4,
             "review_message": "I am a frequent shopper at this online jewelry store, and I can't praise them enough. They offer a wide range of styles, from classic to contemporary, and their prices are reasonable. The jewelry arrives beautifully packaged and always exceeds my expectations.",
             "profile_image": "shopify://shop_images/Image_4_f503a9cf-a8eb-497f-b410-1a951c25fc36.png",
@@ -366,7 +364,6 @@
         "review_Q7Nxnf": {
           "type": "review",
           "settings": {
-            "quote_image": "shopify://shop_images/Vector_5.png",
             "star_rating": 5,
             "review_message": "I am a frequent shopper at this online jewelry store, and I can't praise them enough. They offer a wide range of styles, from classic to contemporary, and their prices are reasonable. The jewelry arrives beautifully packaged and always exceeds my expectations.",
             "profile_image": "shopify://shop_images/Image_4_f503a9cf-a8eb-497f-b410-1a951c25fc36.png",
@@ -382,7 +379,8 @@
       ],
       "name": "Customer Review",
       "settings": {
-        "title": "What Our Customers Are Saying"
+        "title": "What Our Customers Are Saying",
+        "quote_image": "shopify://shop_images/Vector_5.png"
       }
     },
     "slick_slider_yNmddF": {
