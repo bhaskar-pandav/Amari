@@ -1,0 +1,343 @@
+{{ 'customer-review.css' |  asset_url |  stylesheet_tag }}
+<div class="customer-review-wrapper">
+  <div class="customer-review-left">
+    <h2>{{ section.settings.title }}</h2>
+  </div>
+  
+  <div class="customer-review-slider">
+    {% for block in section.blocks %}
+      <div class="review-slide">
+        <div class="quote-icon-wrapper">
+          {% if section.settings.quote_image != blank %}
+            <img src="{{ section.settings.quote_image | image_url }}" class="quote-icon" alt="Quote Icon" loading="lazy" width="" height="">
+          {% endif %}
+        </div>
+        <div class="review-stars">
+          {% for i in (1..block.settings.star_rating) %}★{% endfor %}
+        </div>
+        <div class="customer-review-left-inner">
+    <h2>{{ section.settings.title }}</h2>
+  </div>
+        <p class="review-message">{{ block.settings.review_message }}</p>
+        <div class="reviewer-info">
+          {% if block.settings.profile_image != blank %}
+            <img src="{{ block.settings.profile_image | image_url }}" alt="{{ block.settings.reviewer_name }}" loading="lazy" width="" height="">
+          {% endif %}
+          <div class="reviewer-details">
+            <div class="reviewer_name">            
+              <strong>{{ block.settings.reviewer_name }}</strong>
+              </div>
+              <div class="reviewer_city">
+            <span>{{ block.settings.reviewer_city }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+ <!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+
+<!-- Slick -->
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  setTimeout(function () {
+    const $slider = $('.customer-review-slider');
+    if (!$slider.hasClass('slick-initialized')) {
+      $slider.slick({
+        arrows: true,
+        dots: false,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        vertical: true,
+        verticalSwiping: true,
+        adaptiveHeight: false, // important
+      });
+    }
+  }, 500);
+});
+
+</script>
+{%  schema  %}  
+{
+  "name": "Customer Review",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "What Our Customers Are Saying"
+    },
+     {
+          "type": "image_picker",
+          "id": "quote_image",
+          "label": "Quote Icon Image"
+        }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review Slide",
+      "settings": [
+       
+        {
+          "type": "range",
+          "id": "star_rating",
+          "label": "Star Rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "textarea",
+          "id": "review_message",
+          "label": "Review Message",
+          "default": "I love this store!"
+        },
+        {
+          "type": "image_picker",
+          "id": "profile_image",
+          "label": "Reviewer Profile Image"
+        },
+        {
+          "type": "text",
+          "id": "reviewer_name",
+          "label": "Reviewer Name",
+          "default": "John Doe"
+        },
+        {
+          "type": "text",
+          "id": "reviewer_city",
+          "label": "Reviewer City",
+          "default": "New York"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Customer Review",
+      "blocks": [
+        {
+          "type": "review"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}  
+
+<style>
+.customer-review-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 60px 40px;
+  background-color: #fff;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.customer-review-left {
+  flex: 0 0 30%;
+  max-width: 30%;
+  padding-right: 40px;
+}
+
+.customer-review-left h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #5d2b00;
+  line-height: 1.3;
+}
+
+.customer-review-slider {
+  flex: 0 0 65%;
+  max-width: 65%;
+  position: relative;
+}
+
+.review-slide {
+  background-color: #f6ecdb;
+  padding: 40px;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.quote-icon-wrapper {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.quote-icon {
+  width: 32px;
+  height: auto;
+}
+
+.review-stars {
+  color: #ffb400;
+  font-size: 18px;
+  margin-left: 48px;
+}
+
+.review-message {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+  margin-left: 48px;
+  margin-top: -10px;
+}
+
+.reviewer-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 48px;
+  margin-top: 10px;
+}
+
+.reviewer-info img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.reviewer-details .reviewer_name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+}
+
+.reviewer-details .reviewer_city {
+  font-size: 13px;
+  color: #444;
+}
+
+/* Slick Arrow Overrides */
+.slick-arrow {
+  background-color: #5d2b00;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.slick-prev,
+.slick-next {
+  position: absolute;
+  right: -50px;
+  background: #5d2b00;
+  color: white;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  z-index: 2;
+  opacity: 1 !important;
+}
+
+.slick-prev {
+  top: 0;
+}
+.slick-next {
+  bottom: 0;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  content: '';
+}
+
+
+/* add on css */
+.review-slide {
+  border: 2px solid red;
+}
+
+
+.customer-review-slider,
+.slick-list,
+.slick-track {
+  height: 100% !important;
+  overflow: visible !important;
+}
+
+.customer-review-wrapper {
+  overflow: visible;
+}
+.review-slide {
+  min-height: 300px; /* Adjust as needed */
+}
+
+.customer-review-slider {
+  height: 450px; /* Adjust as needed */
+  overflow: hidden;
+}
+
+.customer-review-slider .slick-list {
+  height: 100% !important;
+  overflow: visible !important;
+}
+
+.customer-review-slider .slick-track {
+  height: 100% !important;
+  overflow: visible !important;
+}
+.review-slide {
+  min-height: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  .customer-review-wrapper {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .customer-review-left,
+  .customer-review-slider {
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+
+  .customer-review-left {
+    padding-right: 0;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .review-slide {
+    padding: 30px;
+  }
+
+  .quote-icon-wrapper {
+    top: 10px;
+    left: 10px;
+  }
+
+  .review-stars,
+  .review-message,
+  .reviewer-info {
+    margin-left: 40px;
+  }
+
+  .slick-prev,
+  .slick-next {
+    right: -40px;
+  }
+}
+
+</style>

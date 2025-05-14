@@ -3,6 +3,7 @@
   <div class="customer-review-left">
     <h2>{{ section.settings.title }}</h2>
   </div>
+  
   <div class="customer-review-slider">
     {% for block in section.blocks %}
       <div class="review-slide">
@@ -14,6 +15,9 @@
         <div class="review-stars">
           {% for i in (1..block.settings.star_rating) %}★{% endfor %}
         </div>
+        <div class="customer-review-left-inner">
+    <h2>{{ section.settings.title }}</h2>
+  </div>
         <p class="review-message">{{ block.settings.review_message }}</p>
         <div class="reviewer-info">
           {% if block.settings.profile_image != blank %}
@@ -51,7 +55,8 @@
         slidesToScroll: 1,
         vertical: true,
         verticalSwiping: true,
-        adaptiveHeight: true,
+        adaptiveHeight: false,
+        autoplay:true,
         prevArrow: '<button type="button" class="slick-prev">↑</button>',
         nextArrow: '<button type="button" class="slick-next">↓</button>',
       });

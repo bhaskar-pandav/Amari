@@ -16,7 +16,7 @@
 .list-menu__item--active {
   text-decoration: underline;
   text-underline-offset: 0.3rem;
-}
+} 
 
 .list-menu__item--active:hover {
   text-decoration-thickness: 0.2rem;
@@ -27,4 +27,13 @@
   overflow: auto;
   width: 10rem;
   padding: 0.5rem;
+}
+
+
+/*css*/
+.header-wrapper-con{
+  max-width: 1820px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 31px 50px 30px 50px;
 }
