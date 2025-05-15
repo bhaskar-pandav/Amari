@@ -10,7 +10,7 @@
 {
   "current": {
     "logo": "shopify://shop_images/Group_48096265.png",
-    "logo_width": 90,
+    "logo_width": 170,
     "type_header_font": "assistant_n4",
     "heading_scale": 100,
     "type_body_font": "assistant_n4",
@@ -145,7 +145,7 @@
     "color_schemes": {
       "scheme-1": {
         "settings": {
-          "background": "#FFFFFF",
+          "background": "#ffffff",
           "background_gradient": "",
           "text": "#ffffff",
           "button": "#121212",
