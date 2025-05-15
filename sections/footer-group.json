@@ -14,31 +14,31 @@
     "footer": {
       "type": "footer",
       "blocks": {
-        "brand_information_VEAdYY": {
+        "brand_information_eDdmHA": {
           "type": "brand_information",
           "settings": {
             "show_social": false
           }
         },
-        "link_list_HjGyhk": {
+        "link_list_weDnkx": {
           "type": "link_list",
           "settings": {
             "heading": "Quick links",
             "menu": "footer"
           }
         },
-        "link_list_Vizdrk": {
+        "link_list_qJpwhr": {
           "type": "link_list",
           "settings": {
             "heading": "Need Help",
             "menu": "need-help"
           }
         },
-        "contact_info_3KGHPN": {
+        "contact_info_ipUjJN": {
           "type": "contact_info",
           "settings": {
             "location_text": "6847 Stirling Rd, Davie, Florida, US",
-            "location_link": "#",
+            "location_link": "",
             "email": "info@amari.com",
             "icon_image_location": "shopify://shop_images/Location.svg",
             "icon_image_email": "shopify://shop_images/Mail.svg"
@@ -46,10 +46,10 @@
         }
       },
       "block_order": [
-        "brand_information_VEAdYY",
-        "link_list_HjGyhk",
-        "link_list_Vizdrk",
-        "contact_info_3KGHPN"
+        "brand_information_eDdmHA",
+        "link_list_weDnkx",
+        "link_list_qJpwhr",
+        "contact_info_ipUjJN"
       ],
       "settings": {
         "color_scheme": "scheme-e444b57d-421c-4ca0-a924-380865d181ef",
@@ -62,7 +62,7 @@
         "payment_enable": true,
         "show_policy": true,
         "margin_top": 0,
-        "padding_top": 72,
+        "padding_top": 36,
         "padding_bottom": 36
       }
     }
