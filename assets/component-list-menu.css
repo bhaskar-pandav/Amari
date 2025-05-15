@@ -37,6 +37,12 @@
   font-weight: 500;
   font-style:  normal;
 }
+@font-face {
+    font-family: 'DM Sans-Bold';
+    src: url('https://cdn.shopify.com/s/files/1/0595/8798/5489/files/DMSans_18pt-Bold.ttf?v=1745235869') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
 .header-wrapper-con{
   max-width: 1820px;
   width: 100%;
@@ -115,3 +121,183 @@
 .header__menu-item:hover span{
   text-decoration: none !important;
 }
+svg.icon.icon-hamburger{
+  width: 27px;
+}
+@media screen and (max-width:575px){
+  .header-wrapper-con{
+    padding: 31px 30px 30px;
+  }
+}
+
+/* footer css */
+.footer-container{
+  max-width: 1820px;
+  width: 100%;
+  margin: 0 auto;
+}
+.footer-block:nth-child(1){
+   max-width: 408px;
+  width: 100%;
+}
+.footer-block:nth-child(2){
+  max-width: 124px;
+  width: 100%;
+}
+.footer-block:nth-child(3){
+  max-width: 167px;
+  width: 100%;
+}
+.footer-block:nth-child(4){
+  max-width: 309px;
+  width: 100%;
+}
+.footer__blocks-wrapper{
+  display: flex;
+  justify-content: space-between;
+}
+p.contact_info_heading{
+  margin: 0px 0px 14px 0px;
+}
+.footer-block .footer-block__brand-info .rte p,
+.footer-block .footer-block__details-content .list-menu__item,
+.con_info_footer{
+  font-family: 'DM Sans-Medium';
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 29px;
+  letter-spacing: 0;
+  color: #FFFFFF;
+  text-decoration: none !important;
+}
+.footer-block__brand-info .footer-block__image-wrapper{
+  margin-bottom: 30px;
+}
+.footer-block .footer-block__heading,
+.contact_info_heading{
+  font-family: 'DM Sans-Bold';
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 35px;
+  letter-spacing: 0;
+  color: #FFFFFF;
+  margin: 0px 0px 14px 0px;
+}
+.con-info-icon{
+  margin-right: 5px;
+}
+.footer__content-bottom{
+  padding:0px 50px ;
+}
+/*FOOTER BOTTOM*/
+.footer__content-bottom .footer-bottom-copyright {
+  max-width: 327px;
+  width: 100%;
+}
+.copyright__content{
+  font-family: 'DM Sans-Medium';
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0;
+  color: #FFFFFF;
+}
+.footer__content-bottom .footer-social-media{
+  max-width: 122px;
+  width: 100%;
+}
+.footer__content-bottom .footer-payments{
+  max-width: 280px;
+  width: 100%;
+}
+.footer__content-bottom{
+  display: flex;
+  justify-content: space-between;
+}
+/* .list-social__link{
+  padding: 0px 10px 0px 0px !important;
+} */
+ a.link.list-social__link{
+  padding: 0px 10px 0px 0px;
+ }
+ .footer-block--newsletter{
+  margin-top: 0px;
+ }
+ .footer__content-bottom .footer-block--newsletter .list-social{
+  flex-wrap: nowrap;
+ }
+ .list-social__link .svg-wrapper{
+  width: 34px !important;
+  height: 34px !important;
+ }
+ .footer .footer__content-bottom{
+  border-top: none;
+ }
+ .footer__content-top .footer__blocks-wrapper{
+  border-bottom: 1px solid #B46100;
+ }
+ .footer .footer__content-top .footer__blocks-wrapper{
+  padding-bottom: 25px;
+ }
+ .footer .footer__content-top{
+  padding-bottom: 30px;
+ }
+ .footer__content-bottom-wrapper .footer__copyright{
+  margin-top: 0px;
+ }
+
+ @media screen and (max-width:1133px){
+  .footer-block:nth-child(1),
+  .footer-block:nth-child(2),
+  .footer-block:nth-child(3),
+  .footer-block:nth-child(4){
+    max-width: 45% !important;
+    width: 100%;
+  }
+ }
+ @media screen and (max-width:750px){
+  .footer-block__heading,
+  .contact_info_heading{
+    position: relative;
+  }
+   .footer-block__heading::after,
+   .contact_info_heading::after{
+    content: url('https://cdn.shopify.com/s/files/1/0595/8798/5489/files/Dropdown.svg?v=1747309374');
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+   }
+   .footer-block__heading.active::after,
+   .contact_info_heading.active::after{
+    content: url('https://cdn.shopify.com/s/files/1/0595/8798/5489/files/Dropdown_1.svg?v=1747309426');
+   }
+  .footer-block__details-content,
+  .contact-info-content{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0;
+  }
+  .footer-block__details-content.active,
+  .contact-info-content.active{
+    max-height: 500px;
+    padding: 0px 0px 13px;
+  }
+   .footer-block:nth-child(1),
+  .footer-block:nth-child(2),
+  .footer-block:nth-child(3),
+  .footer-block:nth-child(4){
+    max-width: 100% !important;
+    width: 100%;
+  }
+  .footer-block:nth-child(2),
+  .footer-block:nth-child(3),
+  .footer-block:nth-child(4){
+    border-bottom: 1px solid #FFFFFF;
+  }
+  .footer__content-top .footer__blocks-wrapper{
+    border: none;
+  }
+ }

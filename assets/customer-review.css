@@ -182,10 +182,10 @@
   color: #663700;
 }
 .customer-review-slider .slick-list .slick-track{
-  height: 600px !important;
+  height: 332px !important; 
 }
 .customer-review-slider.slick-initialized.slick-slider.slick-vertical{
-  max-height: 351px;
+  max-height: 332px;
   height: 100%;
 }
 /* Responsive */

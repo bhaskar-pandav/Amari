@@ -49,7 +49,7 @@
     or section.settings.enable_follow_on_shop
   -%}
     {%- unless only_empty_brand -%}
-      <div class="footer__content-top page-width">
+      <div class="footer__content-top page-width footer-container">
         {%- if section.blocks.size > 0 -%}
           {%- liquid
             if section.blocks.size == 9
@@ -153,14 +153,71 @@
                         {{ 'image' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
                       {%- endif -%}
                     </div>
+
+                    {% when 'contact_info' %}
+                      <div class="footer-contact-info">
+                        {% for block in section.blocks %}
+  {% if block.type == 'contact_info' %}
+    <div class="contact-info-block">
+      <p class="contact_info_heading footer-block__heading" ><strong>Contact Info</strong></p>
+      <div class="contact-info-content footer-block__details-content">
+        <p>
+<img src="{{ block.settings.icon_image_location | image_url: width: 40 }}" alt="icon" class="con-info-icon" width="" height="" />         
+<a href="https://www.google.com/maps/search/?api=1&query={{ block.settings.location_text | url_encode }}" target="_blank" class="con_info_footer">
+    {{ block.settings.location_text }}
+  </a>       
+   </p>
+        <p>
+          <img src="{{ block.settings.icon_image_email | image_url: width: 40 }}" alt="icon" width="" height="" class="con-info-icon" width="" height="" />
+          <a href="mailto:{{ block.settings.email }}" class="con_info_footer">{{ block.settings.email }}</a>
+        </p>
+      </div>
+    </div>
+  {% endif %}
+{% endfor %}
+                      </div>
+                   
                 {%- endcase -%}
               </div>
             {%- endfor -%}
           </div>
         {%- endif -%}
 
-        <div
-          class="footer-block--newsletter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        
+      </div>
+    {%- endunless -%}
+  {%- endif -%}
+
+  <div
+    class="footer__content-bottom footer-container{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+    {% if settings.animations_reveal_on_scroll %}
+      data-cascade
+    {% endif %}
+  >
+     <div class="footer__content-bottom-wrapper footer-bottom-copyright{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
+      <div class="footer__copyright caption">
+        <small class="copyright__content"
+          > Copyright &copy; <a href="/">Amari</a> {{ 'now' | date: '%Y' }}, All rights reserved
+        </small>
+        {% comment %} <small class="copyright__content">{{ powered_by_link }}</small> {% endcomment %}
+        {% comment %} {%- if section.settings.show_policy -%}
+          <ul class="policies list-unstyled">
+            {%- for policy in shop.policies -%}
+              {%- if policy != blank -%}
+                <li>
+                  <small class="copyright__content"
+                    ><a href="{{ policy.url }}">{{ policy.title | escape }}</a></small
+                  >
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        {%- endif -%} {% endcomment %}
+      </div>
+    </div>
+
+    <div
+          class="footer-block--newsletter footer-social-media{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
           {% if settings.animations_reveal_on_scroll %}
             data-cascade
           {% endif %}
@@ -246,17 +303,8 @@
             {%- render 'social-icons', class: 'footer__list-social' -%}
           {%- endif -%}
         </div>
-      </div>
-    {%- endunless -%}
-  {%- endif -%}
 
-  <div
-    class="footer__content-bottom{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-    {% if settings.animations_reveal_on_scroll %}
-      data-cascade
-    {% endif %}
-  >
-    <div class="footer__content-bottom-wrapper page-width">
+    <div class="footer__content-bottom-wrapper footer-payments">
       <div class="footer__column footer__localization isolate">
         {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
           <localization-form>
@@ -297,30 +345,54 @@
         {%- endif -%}
       </div>
     </div>
-    <div class="footer__content-bottom-wrapper page-width{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
-      <div class="footer__copyright caption">
-        <small class="copyright__content"
-          >&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}
-        </small>
-        <small class="copyright__content">{{ powered_by_link }}</small>
-        {%- if section.settings.show_policy -%}
-          <ul class="policies list-unstyled">
-            {%- for policy in shop.policies -%}
-              {%- if policy != blank -%}
-                <li>
-                  <small class="copyright__content"
-                    ><a href="{{ policy.url }}">{{ policy.title | escape }}</a></small
-                  >
-                </li>
-              {%- endif -%}
-            {%- endfor -%}
-          </ul>
-        {%- endif -%}
-      </div>
-    </div>
+ 
   </div>
 </footer>
 
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  function setupFooterDropdowns() {
+    if (window.innerWidth > 749) return;
+ 
+    const headings = document.querySelectorAll('.footer-block__heading')   
+    headings.forEach((heading) => {
+      const content = heading.nextElementSibling;
+ 
+      if (!content || !content.classList.contains('footer-block__details-content')) return;
+        
+      heading.addEventListener('click', () => {
+        const isActive = heading.classList.contains('active');
+       
+        
+        document.querySelectorAll('.footer-block__heading').forEach(h => h.classList.remove('active'));
+        document.querySelectorAll('.footer-block__details-content').forEach(c => c.classList.remove('active'));
+ 
+        
+        if (!isActive) {
+          heading.classList.add('active');
+          content.classList.add('active');
+        }
+      });
+    });
+  }
+ 
+  setupFooterDropdowns();
+ 
+  
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 749) {
+      document.querySelectorAll('.footer-block__heading').forEach(h => h.classList.remove('active'));
+      document.querySelectorAll('.footer-block__details-content').forEach(c => {
+        c.classList.remove('active');
+        c.style.maxHeight = '';
+      });
+    }
+  });
+});
+
+
+
+</script>
 {% schema %}
 {
   "name": "t:sections.footer.name",
@@ -344,8 +416,43 @@
           "default": "footer",
           "label": "t:sections.footer.blocks.link_list.settings.menu.label"
         }
+        
       ]
     },
+    {
+      "type": "contact_info",
+      "name": "Contact Info",
+      "settings": [
+        {
+          "type": "text",
+          "id": "location_text",
+          "label": "Location",
+          "default": "6847 Stirling Rd, Davie, Florida, US"
+        },
+        {
+          "type": "url",
+          "id": "location_link",
+          "label": "Location Link"
+        },
+        {
+          "type": "text",
+          "id": "email",
+          "label": "Email",
+          "default": "info@amari.com"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_image_location",
+          "label": "Location Icon"
+        },
+         {
+          "type": "image_picker",
+          "id": "icon_image_email",
+          "label": "Email Icon"
+        }
+      ]
+    },
+
     {
       "type": "brand_information",
       "name": "t:sections.footer.blocks.brand_information.name",
