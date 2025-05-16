@@ -1,5 +1,8 @@
 {{ 'custom-img-with-txt.css' | asset_url |  stylesheet_tag }}
 <section class="exclusive-products">
+   <div class="svg_leaf-right">
+    <img src="{{ section.settings.svg_leaf-right | img_url: 'medium' }}" alt="{{ section.settings.svg_leaf-right.alt | escape }}" width="" height="">
+  </div>
   <div class="exclusive-products__container">
    
     <div class="exclusive-products__left">
@@ -48,6 +51,11 @@
     {
       "type": "image_picker",
       "id": "svg_image",
+      "label": "Upload Svg Image"
+    },
+     {
+      "type": "image_picker",
+      "id": "svg_leaf-right",
       "label": "Upload Svg Image"
     },
     {

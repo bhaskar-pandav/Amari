@@ -43,6 +43,7 @@
   flex: 1 1 50%;
   max-width: 54.451%;
   width: 100%;
+  position: relative;
 }
 
 .exclusive-products__heading {
@@ -121,7 +122,17 @@
     animation: spin 5s linear infinite;
     transform-origin: center center; /* Ensures the spin is around the center */
 }
-
+section.exclusive-products{
+  position: relative;
+}
+.svg_leaf-right img{
+    position: absolute;
+    right: 0;
+    top: -16%;
+    max-width: 215px;
+    width: 100%;
+    z-index: 0;
+}
 /* Keyframes for smooth infinite rotation */
 @keyframes spin {
     from {
@@ -149,6 +160,10 @@
 @media screen and (max-width:1199px){
     .exclusive-products__icon-text{
         font-size: 16px;
+    }
+    .svg_leaf-right img{
+      max-width: 160px;
+      width: 100%;
     }
     .exclusive-products__paragraph{
         margin-bottom: 20px;
