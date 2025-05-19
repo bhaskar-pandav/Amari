@@ -23,10 +23,10 @@
     column-gap: 30.15px;
     flex-wrap: nowrap;
 }
-.featured_collection .card__inner.color-scheme-2.gradient.ratio{
+/* .featured_collection .card__inner.color-scheme-2.gradient.ratio{
     max-height: 429px;
     height: 100%;
-}
+} */
 .card-wrapper .card__inner{
     border-radius: 10px;
 }
@@ -243,10 +243,10 @@ body{
     }
   }
   @media screen and (max-width:320px){
-    .slick-list{
+    /* .slick-list{
       max-height: 400px !important;
       height: 100%;
-    }
+    } */
     .featured_collection .collection .title{
       font-size: 30px;
     }

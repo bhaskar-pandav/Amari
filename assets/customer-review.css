@@ -95,7 +95,28 @@
   font-size: 2.2rem;
   color: #FFAA01;
 }
-
+button.slick-prev.slick-arrow.slick-disabled{
+    background-color: #FFFFFF !important;
+    border: 1px solid #F5EDDC;
+    cursor: default;
+    opacity: 1;
+}
+button.slick-next.slick-arrow.slick-disabled{
+    background-color: #FFFFFF !important;
+    border: 1px solid #F5EDDC;
+    cursor: default;
+    opacity: 1;
+}
+.slick-next.slick-disabled:before {
+  background-image: url('https://cdn.shopify.com/s/files/1/0595/8798/5489/files/arrow_left_1.png?v=1747630503'); 
+  opacity: 1; 
+  transform: rotate(180deg);
+}
+.slick-prev.slick-disabled:before {
+  background-image: url('https://cdn.shopify.com/s/files/1/0595/8798/5489/files/arrow_left_1.png?v=1747630503'); 
+  opacity: 1;
+  transform: rotate(0deg);
+}
 .review-message {
   font-family: 'DM Sans-Medium';
   font-size: 16px;
