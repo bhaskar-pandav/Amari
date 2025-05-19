@@ -307,6 +307,7 @@
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "image": "shopify://shop_images/Image_with_txt_Section.png",
+        "svg_leaf-left": "shopify://shop_images/svg-left.png",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "text_first",

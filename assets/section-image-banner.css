@@ -675,6 +675,7 @@
 }
 .banner__product-card.banner__product-card--second{
   margin-top: 47px;
+  border-radius: 125px 125px 0px 125px;
 }
 .product-info .product-title{
   font-family: 'DM Sans-Bold';
@@ -920,7 +921,7 @@
   }
   .svg-fourth{
     top: 675px;
-    left: 585px;
+    left: 80%;
   }
   .svg-third{
     top: 1266px;

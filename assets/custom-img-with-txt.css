@@ -211,6 +211,9 @@ section.exclusive-products{
   .exclusive-products__container{
     gap: 30px;
   }
+  .svg_leaf-right img{
+    display: none !important;
+  }
 }
 @media screen and (max-width:425px){
   .exclusive-products__right{
