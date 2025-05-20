@@ -255,6 +255,19 @@
       }
     {% endstyle %}
 
+    {%  style  %} 
+    .a.klaviyo-bis-trigger{
+    background-color: black !important;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    max-width: 341px;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    }
+     {% endstyle %}   
+
     {{ 'base.css' | asset_url | stylesheet_tag }}
     <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
 
@@ -430,23 +443,37 @@
     }
   });
 </script>
+
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // Assume you have a way to check if the product is sold out
-    var isSoldOut = {{ product.available | json }} === false;
+document.addEventListener("DOMContentLoaded", function () {
+  var isSoldOut = {{ product.available | json }} === false;
 
-    var buyButton = document.querySelector('.shopify-payment-button__button');
-    var notifyLink = document.querySelector('.klaviyo-bis-trigger');
+  var buyButton = document.querySelector('.shopify-payment-button__button');
+  var notifyLink = document.querySelector('.klaviyo-bis-trigger');
 
-    if (isSoldOut) {
-      if (buyButton) buyButton.style.display = 'none';
-      if (notifyLink) notifyLink.style.display = 'inline-block';
-    } else {
-      if (buyButton) buyButton.style.display = 'inline-block';
-      if (notifyLink) notifyLink.style.display = 'none';
-    }
-  });
+  if (notifyLink) {
+    
+    notifyLink.style.backgroundColor = 'black';
+    notifyLink.style.color = 'white';
+    notifyLink.style.textDecoration = 'none';
+    notifyLink.style.padding = '15px';
+    notifyLink.style.maxWidth = '341px';
+    notifyLink.style.width = '100%';
+    notifyLink.style.textAlign = 'center';
+    notifyLink.style.margin = '0';
+  }
+
+  if (isSoldOut) {
+    if (buyButton) buyButton.style.display = 'none';
+    if (notifyLink) notifyLink.style.display = 'inline-block';
+  } else {
+    if (buyButton) buyButton.style.display = 'inline-block';
+    if (notifyLink) notifyLink.style.display = 'none';
+  }
+});
 </script>
+
 
   </body>
 </html>  
+  
