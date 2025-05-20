@@ -385,6 +385,35 @@
         "quote_image": "shopify://shop_images/Vector_5.png"
       }
     },
+    "174772013554d43a9e": {
+      "type": "apps",
+      "blocks": {
+        "instafeed_app_block_V7dtYY": {
+          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "title": "",
+            "title_color": "",
+            "title_size_v2": 0,
+            "alignment": "center",
+            "instafeed_margin_top": 0,
+            "instafeed_margin_bottom": 0,
+            "instafeed_margin_sides": 0,
+            "show_instagram_link": false,
+            "link_alignment": "left",
+            "link_color": "#000000",
+            "background_color": "",
+            "feed_id": "",
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "instafeed_app_block_V7dtYY"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "174771847421ed2308": {
       "type": "apps",
       "blocks": {
@@ -530,6 +559,7 @@
     "image_with_text_JqAqBB",
     "featured_blog_r6DDkT",
     "customer_review_H6JGJN",
+    "174772013554d43a9e",
     "174771847421ed2308",
     "1747718285758fb032",
     "slick_slider_yNmddF",
