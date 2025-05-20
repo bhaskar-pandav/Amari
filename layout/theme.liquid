@@ -430,5 +430,23 @@
     }
   });
 </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Assume you have a way to check if the product is sold out
+    var isSoldOut = {{ product.available | json }} === false;
+
+    var buyButton = document.querySelector('.shopify-payment-button__button');
+    var notifyLink = document.querySelector('.klaviyo-bis-trigger');
+
+    if (isSoldOut) {
+      if (buyButton) buyButton.style.display = 'none';
+      if (notifyLink) notifyLink.style.display = 'inline-block';
+    } else {
+      if (buyButton) buyButton.style.display = 'inline-block';
+      if (notifyLink) notifyLink.style.display = 'none';
+    }
+  });
+</script>
+
   </body>
 </html>  
