@@ -385,6 +385,35 @@
         "quote_image": "shopify://shop_images/Vector_5.png"
       }
     },
+    "1747718285758fb032": {
+      "type": "apps",
+      "blocks": {
+        "instafeed_app_block_RqgK3q": {
+          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "title": "",
+            "title_color": "",
+            "title_size_v2": 0,
+            "alignment": "center",
+            "instafeed_margin_top": 0,
+            "instafeed_margin_bottom": 0,
+            "instafeed_margin_sides": 0,
+            "show_instagram_link": false,
+            "link_alignment": "left",
+            "link_color": "#000000",
+            "background_color": "",
+            "feed_id": "",
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "instafeed_app_block_RqgK3q"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "slick_slider_yNmddF": {
       "type": "slick-slider",
       "blocks": {
@@ -466,6 +495,23 @@
       "disabled": true,
       "name": "slick slider practice ",
       "settings": {}
+    },
+    "17477182633ea6affc": {
+      "type": "apps",
+      "blocks": {
+        "klaviyo_email_marketing_sms_form_embed_block_cFWFD8": {
+          "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/form-embed-block/2632fe16-c075-4321-a88b-50b567f42507",
+          "settings": {
+            "formId": ""
+          }
+        }
+      },
+      "block_order": [
+        "klaviyo_email_marketing_sms_form_embed_block_cFWFD8"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -478,6 +524,8 @@
     "image_with_text_JqAqBB",
     "featured_blog_r6DDkT",
     "customer_review_H6JGJN",
-    "slick_slider_yNmddF"
+    "1747718285758fb032",
+    "slick_slider_yNmddF",
+    "17477182633ea6affc"
   ]
 }
