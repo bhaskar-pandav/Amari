@@ -38,17 +38,17 @@
           "type": "quantity_selector",
           "settings": {}
         },
+        "custom_liquid_LEAFyy": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<a class=\"klaviyo-bis-trigger\" style=\"display:none;\" href=\"#\">Notify Me When Available</a>"
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": true,
             "show_gift_card_recipient": true
-          }
-        },
-        "custom_liquid_LEAFyy": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<a class=\"klaviyo-bis-trigger\" style=\"display:none;\" href=\"#\">Notify Me When Available</a>"
           }
         },
         "description": {
@@ -82,8 +82,8 @@
         "price",
         "variant_picker",
         "quantity_selector",
-        "buy_buttons",
         "custom_liquid_LEAFyy",
+        "buy_buttons",
         "description",
         "share",
         "subscriptions_app_block_XeeDiD"
