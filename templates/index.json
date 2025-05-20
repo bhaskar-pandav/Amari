@@ -385,10 +385,10 @@
         "quote_image": "shopify://shop_images/Vector_5.png"
       }
     },
-    "1747718285758fb032": {
+    "174771847421ed2308": {
       "type": "apps",
       "blocks": {
-        "instafeed_app_block_RqgK3q": {
+        "instafeed_app_block_nJaAGU": {
           "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
           "settings": {
             "title": "",
@@ -408,8 +408,14 @@
         }
       },
       "block_order": [
-        "instafeed_app_block_RqgK3q"
+        "instafeed_app_block_nJaAGU"
       ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "1747718285758fb032": {
+      "type": "apps",
       "settings": {
         "include_margins": true
       }
@@ -524,6 +530,7 @@
     "image_with_text_JqAqBB",
     "featured_blog_r6DDkT",
     "customer_review_H6JGJN",
+    "174771847421ed2308",
     "1747718285758fb032",
     "slick_slider_yNmddF",
     "17477182633ea6affc"
