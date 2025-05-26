@@ -207,7 +207,7 @@
         "disabled": false,
         "settings": {
           "footer_ui_type": "geolocation",
-          "block_position": "header",
+          "block_position": "",
           "option_language": true,
           "style_corners": "square",
           "style_dropdown": "outlined",

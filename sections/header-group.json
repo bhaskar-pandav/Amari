@@ -45,7 +45,7 @@
             "title": "Geolocation Button",
             "selector_type": "geolocation",
             "block_position": "#shopify-section-footer",
-            "display_position": "last",
+            "display_position": "first",
             "button_content": "{square_flag} {country} {currency_symbol}",
             "custom_icon_svg": "",
             "style_colors_text": "#000",
