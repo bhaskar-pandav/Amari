@@ -201,7 +201,7 @@
         "type": "shopify://apps/geolocation-orbe/blocks/app-embed-footer-selector/7cb09287-cd2b-4646-837c-f1f9b6ea703e",
         "disabled": false,
         "settings": {
-          "footer_ui_type": "geolocation",
+          "footer_ui_type": "selector",
           "block_position": "",
           "option_language": true,
           "style_corners": "square",
